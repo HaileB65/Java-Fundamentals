@@ -7,18 +7,45 @@ Fundamentals Exercise 1: CLI
          a. create 3 new .txt files all with different names
          b. print the directory path
          c. list the contents of the folder
-     5. Inside of folder Terminal_testing, create a new folder
-     6. Copy a file from Terminal_testing to the new folder
-     7. Move a different file from Terminal_testing to the new folder
-     8. Demonstrate removing:
+     4. Inside of folder Terminal_testing, create a new folder
+     5. Copy a file from Terminal_testing to the new folder
+     6. Move a different file from Terminal_testing to the new folder
+     7. Demonstrate removing:
          a. A file
          b. A folder
-     9. CHALLENGE:
+     8. CHALLENGE:
          a. Use $ vim to write some text inside a file
          b. Use $ cat print contents of file
          c. Use $ grep to search for a word inside file
 
-Example Output (pwd):
-    1. Cadens-MacBook-Pro:CodingNomads cadenmackenzie$ pwd
-       /Users/cadenmackenzie/Documents/CodingNomads
+Answers:
+    1. entered: cd ~/Documents/CodingNomads/labs/online-java-fundamentals
+            result: Haile Brendon@HaileB ~/Documents/CodingNomads/labs/online-java-fundamentals (master)
+    2. entered: mkdir Terminal_testing then ls
+            result: online-java-fundamentals.iml  out/  README.md  src/  Terminal_testing/
+    3.
+             a. entered: touch dog.txt cat.txt. mouse.txt and then ls
+                      result: cat.txt.  dog.txt  mouse.txt
+             b. entered: pwd
+                      result: /c/Users/Haile Brendon/Documents/CodingNomads/labs/online-java-fundamentals/Terminal_testing
+             c. entered: pwd
+                      result: cat.txt.  dog.txt  mouse.txt
+    4. entered: mkdir Animals
+             result: Animals/  cat.txt.  dog.txt  mouse.txt
+    5. entered: mv ~/Documents/CodingNomads/labs/online-java-fundamentals/Terminal_testing/mouse.txt ~/Documents/CodingNomads/labs/online-java-fundamentals/Terminal_testing/Animals
+            result: Animals/  cat.txt.  dog.txt
+    6. entered: mv ~/Documents/CodingNomads/labs/online-java-fundamentals/Terminal_testing/dog.txt ~/Documents/CodingNomads/labs/online-java-fundamentals/Terminal_testing/Animals
+               result: Animals/  cat.txt
+    7.
+                 a. entered: rm cat.txt. and ls
+                          result: Animals/
+                 b. entered: rm -r animals and then ls
+                          result: Haile Brendon@HaileB ~/Documents/CodingNomads/labs/online-java-fundamentals/Terminal_testing (master)
+    8.
+                 a. entered: vim rabbit.txt
+                          result: vim opened rabbit.txt file where I entered "hello world!"
+                 b. entered: cat rabbit.txt
+                          result: hello world!
+                 c. entered: grep 'world' rabbit.txt
+                          result: hello world!
 
