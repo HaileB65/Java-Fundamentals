@@ -17,6 +17,36 @@ public class Exercise_04 {
 
         // write your code below
 
+        boolean user = true;
+        System.out.println("boolean type= " + user);
+
+        char
+                letter = 'j';
+        System.out.println("char type= " + letter);
+
+        byte
+                b =126;
+        System.out.println("byte type= " + b);
+
+        short
+                a = -32768;
+        System.out.println("short type= " + a);
+
+        int c = 231553125;
+        System.out.println("int type " + "c= " + c);
+
+        long
+                w = -3215648321648l;
+        System.out.println("long type= " + w);
+
+        float
+                sky = 42156483.0000f;
+        System.out.println("float type= " + sky);
+
+        double
+                sea = 87425516546.8234;
+        System.out.println("double type= " + sea);
+
     }
 
 }
