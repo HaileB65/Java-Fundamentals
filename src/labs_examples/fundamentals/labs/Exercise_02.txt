@@ -3,17 +3,17 @@
 2) Once complete, practice the following on your own machine and paste the commands you run for each step below.
 
 Initializing git folder
-    1. In CodingNomads folder, create new folder git_practice
+    1. In CodingNomads folder, create new folder git_practice. Command: mkdir git_practice
     2. Inside git_practice:
         a. Initialize folder as a git folder (make sure you are in the correct folder when initializing) by running
-            the "git init" command within the git_practice folder.
-        b. Make new file
-        c. Add file
-        d. Commit file
+            the "git init" command within the git_practice folder. Command: git init
+        b. Make new file. Command: touch file1.txt
+        c. Add file. Command: git add file1.txt
+        d. Commit file. Command: git commit -m "adding file1.txt"
         c. On Github, create new git_practice repository
         d. Add this new GitHub repository as a new "remote" to your local Git repo. You can do this by using the command
-            git remote add <ANY_NAME> <URL_OF_NEW_GITHUB_REPO.git>
-        d. Push commit file to Github
+            git remote add <ANY_NAME> <URL_OF_NEW_GITHUB_REPO.git>. Command: git remote haile https://github.com/HaileB65/Java-Fundamentals
+        d. Push commit file to Github. Command: git push haile master
         e. Practice the following git flow until you feel comfortable:
             i.   Create or modify file
             ii.  Add file(s)
@@ -23,12 +23,12 @@ Initializing git folder
 Adding a remote
     1. Create new personal repository on Github named "git_practice_2".
     2. On local machine, add the new remote address to the same git repo you were working with in the previous section above
-        (directions are provided on Github with new repo is created)
-    3. Push local git repository to your Github using the new remote.
+        (directions are provided on Github with new repo is created). Command: git remote haile2 https://github.com/HaileB65/git_practice_2
+    3. Push local git repository to your Github using the new remote. Command: git push haile2 master
 
 Cloning repository from Github
     1. Find a repository on Github
-    2. Clone repository to local machine
+    2. Clone repository to local machine Command: git clone https://github.com/codingnomads/online-java-fundamentals.git
     3. Create new repository on Github
-    4. Add new remote on local machine
-    5. Push to new Github repository
+    4. Add new remote on local machine Command: git remote haile https://github.com/HaileB65/Java-Fundamentals
+    5. Push to new Github repository Command: git push haile master
