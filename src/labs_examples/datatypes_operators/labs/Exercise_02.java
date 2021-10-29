@@ -1,5 +1,7 @@
 package labs_examples.datatypes_operators.labs;
 
+import java.sql.SQLOutput;
+
 /**
  * Data Types and Operators Exercise 2: Type conversion and casting
  *
@@ -24,6 +26,15 @@ public class Exercise_02 {
     public static void main(String[] args) {
 
         // write code here
+        int x = 1001;
+        System.out.println("int x = " + x);
+        double d = x;
+        System.out.println("double d = " + d);
 
+
+        double n = 10.5;
+        System.out.println("double n = " + n);
+        int z = (int) n;
+        System.out.println("int z = " + z); // information can be lost during a narrowing conversion
     }
 }

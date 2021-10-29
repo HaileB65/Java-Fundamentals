@@ -17,7 +17,17 @@ public class Exercise_01 {
     public static void main(String[] args) {
 
         // write code here
+        int i = 10;
+        System.out.println("int type = " + i);
 
+        double d = 123456789.987456;
+        System.out.println("double type = " + d);
+
+        float f = 324.014f;
+        System.out.println("float type = " + f);
+
+        char letter = 'j';
+        System.out.println("char type = " + letter);
     }
 }
 
