@@ -10,14 +10,41 @@ class RelationalOperators {
 
     public static void main(String[] args) {
 
-        // example of "less than"
-        int a = 1;
-        int b = 2;
+
+        int a = 3;
+        int b = 8;
+        int c = 18;
+        int d = 12;
+        int e = 22;
+        int f = 22;
+
+        System.out.println("a= " + a + "  b= " + b + "  c= " + c + "  d= " + d + "  e= " + e + "  f= " + f);
+
         if (a < b){
             System.out.println("a is less than b");
         }
 
-        // write your code below
+        if (a <= b){
+            System.out.println("a is less than or equal to b");
+        }
+
+        if (c > d){
+            System.out.println("c is greater than d");
+        }
+
+        if (c >= d){
+            System.out.println("c is greater than or equal to d");
+        }
+
+        if (e == f){
+            System.out.println("e is equal to f");
+        }
+
+
+
+
+
+
 
     }
 

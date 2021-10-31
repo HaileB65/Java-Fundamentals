@@ -10,14 +10,39 @@ class LogicalOperators {
 
     public static void main(String[] args) {
 
-        // example of "OR"
+
         boolean a = true;
-        boolean b = false;
-        if (a | b){
-            System.out.println("a or b is true");
+        boolean b = true;
+        boolean c = false;
+        boolean d = true;
+
+        System.out.println("a= " + a + "  b= " + b + "  c= " + c + "  d= " + d);
+
+        if (a & b){
+            System.out.println("a and b are true");
         }
 
-        // write your code below
+        if (a && b){
+            System.out.println("a and b are true");
+        }
+
+        if (a | c){
+            System.out.println("a or c is true");
+        }
+
+        if (a || c){
+            System.out.println("a or c is true");
+        }
+
+        if (a ^ c){  // ^ is the "XOR" operator
+            System.out.println("only a or c is true");
+        }
+
+        if (c != d){  // ! is the "NOT" operator
+            System.out.println("c is not equal to d");
+        }
+
+
 
     }
 
