@@ -11,8 +11,8 @@ class RelationalOperators {
     public static void main(String[] args) {
 
 
-        int a = 3;
-        int b = 8;
+        int a = 3, b = 8;
+
         int c = 18;
         int d = 12;
         int e = 22;
@@ -20,25 +20,26 @@ class RelationalOperators {
 
         System.out.println("a= " + a + "  b= " + b + "  c= " + c + "  d= " + d + "  e= " + e + "  f= " + f);
 
-        if (a < b){
+        if(a < b){
             System.out.println("a is less than b");
         }
 
-        if (a <= b){
+        if(a <= b){
             System.out.println("a is less than or equal to b");
         }
 
-        if (c > d){
+        if(c > d){
             System.out.println("c is greater than d");
         }
 
-        if (c >= d){
+        if(c >= d){
             System.out.println("c is greater than or equal to d");
         }
 
-        if (e == f){
+        if(e == f){
             System.out.println("e is equal to f");
         }
+
 
 
 

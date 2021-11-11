@@ -15,17 +15,17 @@ public class Exercise_06 {
         // write code here
         double pi = 3.14;
         double radius = 3.14;
-        double radiussquared = Math.pow(3.14, 2);
+        double radiusSquared = Math.pow(3.14, 2);
         int height = 5;
         System.out.println("Volume of a cylinder is = pi * radius^2 * height");
         System.out.println("pi= " + pi + "  radius= " + radius + "  height= " + height);
-        double volume = pi * radiussquared * height;
-        System.out.println("Volume= " + volume);
+
+        System.out.println("Volume= " + (pi * radiusSquared * height));
 
 
         System.out.println("Surface Area of a cylinder is = 2*pi*radius*height + 2*pi*radius^2");
-        double surfacearea = 2 * pi * radius * height + 2 * pi * radiussquared;
-        System.out.println("Surface Area= " + surfacearea);
+        double surfaceArea = 2 * pi * radius * height + 2 * pi * radiusSquared;
+        System.out.println("Surface Area= " + surfaceArea);
 
 
     }
