@@ -1,5 +1,6 @@
 package labs_examples.conditions_loops.labs;
 
+
 /**
  * Conditions and Loops Exercise 6: Basic while loop
  *
@@ -8,4 +9,14 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_06 {
+    public static void main(String[] args){
+        int sum=0, x=0;
+        while(x<=100){
+            x++;
+            sum=sum+x;
+        }
+        System.out.println("The sum is equal to " + sum);
+
+
+    }
 }
