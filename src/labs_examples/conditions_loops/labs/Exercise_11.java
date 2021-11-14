@@ -22,5 +22,48 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_11 {
+    public static void main(String[] ars){
+
+        int z = 0;
+        for(z=1; z<=10; z++){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=2; z<=20; z+=2){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=3; z<=30; z+=3){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=4; z<=40; z+=4){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=5; z<=50; z+=5){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=6; z<=60; z+=6){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=7; z<=70; z+=7){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=8; z<=80; z+=8){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=9; z<=90; z+=9){
+            System.out.print(z + "|");
+        }
+        System.out.print('\n');
+        for(z=10; z<=100; z+=10){
+            System.out.print(z + "|");
+        }
+    }
 
 }
