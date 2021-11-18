@@ -23,25 +23,33 @@ public class Exercise_02 {
         // 4) write completed code here
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number between 1 and 9: ");
-        int userinput = scanner.nextInt();
+        int userInput = 0;
 
-        if (userinput == 1){
-            System.out.println("Monday");
-            }else if (userinput == 2){
+        while(userInput != -1) {
+            System.out.print("Enter a number between 1 and 9: ");
+            userInput = scanner.nextInt();
+
+
+            if (userInput == 1) {
+                System.out.println("Monday");
+            } else if (userInput == 2) {
                 System.out.println("Tuesday");
-            }else if (userinput == 3){
+            } else if (userInput == 3) {
                 System.out.println("Wednesday");
-            }else if (userinput == 4) {
+            } else if (userInput == 4) {
                 System.out.println("Thursday");
-            }else if (userinput == 5) {
+            } else if (userInput == 5) {
                 System.out.println("Friday");
-            }else if (userinput == 6) {
-            System.out.println("Saturday");
-            }else if (userinput == 7) {
-            System.out.println("Sunday");
-            }else if (userinput >=8) {
-            System.out.println("Other");
+            } else if (userInput == 6) {
+                System.out.println("Saturday");
+            } else if (userInput == 7) {
+                System.out.println("Sunday");
+            } else if (userInput == -1) {
+                System.out.println("Goodbye");
+            }else {
+                System.out.println("Other");
+            }
+
         }
 
     }
