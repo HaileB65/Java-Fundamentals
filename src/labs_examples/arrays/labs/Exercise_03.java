@@ -18,6 +18,21 @@ package labs_examples.arrays.labs;
 public class Exercise_03 {
 
     public static void main(String[] args) {
-        
+        int[][] twoDArray = new int[5][5];
+
+        for (int i=0; i <twoDArray.length; i++){ // populates the 2DArray
+            for(int j=0; j<twoDArray[i].length; j++){
+                twoDArray[i][j] = (i * j) * 3;
+            }
+        }
+
+        for(int[] columns : twoDArray){ // prints out each element in the 2DArray
+            for(int rows : columns){
+                System.out.print(rows + " -> ");
+            }
+            System.out.println();
+        }
+
+
     }
 }
