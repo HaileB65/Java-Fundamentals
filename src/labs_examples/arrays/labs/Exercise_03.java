@@ -22,7 +22,7 @@ public class Exercise_03 {
 
         for (int i=0; i <twoDArray.length; i++){ // populates the 2DArray
             for(int j=0; j<twoDArray[i].length; j++){
-                twoDArray[i][j] = (i * j) * 3;
+                twoDArray[i][j] = (i * j) * 3; // Ask how to iterate in 2dArray in multiples of 3?
             }
         }
 

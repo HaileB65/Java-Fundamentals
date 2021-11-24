@@ -30,6 +30,12 @@ public class Exercise_06 {
         for(int i : nums){
             System.out.print(i + " ");
         }
+        System.out.println();
+
+        System.out.print("Contents of array reversed - ");
+        for(temp = nums.length-1; temp>=0; temp--){
+                System.out.print(nums[temp] + " ");
+        }
     }
 
 }
