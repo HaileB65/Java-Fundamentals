@@ -19,6 +19,7 @@ public class Exercise_01 {
 
         for(int i=0; i<survey.length; i++){ // i < survey.length decides how many numbers will be collected before entering them into the array
             survey[i] = userInput.nextInt(); // places each integer the user enters into the next array index
+            // System.out.println();
         }
         for(int  j=0; j <survey.length; j++){
             System.out.print(survey[j] + " | "); // prints out each element in the array
@@ -31,10 +32,7 @@ public class Exercise_01 {
         }
         System.out.println("sum = " + sum);
 
-        int average = 0;
-        for (int j : survey) {
-            average = sum / 10; // calculates the average of the elements in the array
-        }
+        int average = sum / 10; // calculates the average of the elements in the array
         System.out.println("average = " + average);
 
     }
