@@ -20,10 +20,10 @@ public class Exercise_04 {
         irregularArray[0][2] = 43;
         irregularArray[0][3] = 57;
 
-        irregularArray[1][0] = 89; //// populates the array at index 1 with 2 elements
+        irregularArray[1][0] = 89; // populates the array at index 1 with 2 elements
         irregularArray[1][1] = 100;
 
-        for(int[] column: irregularArray){
+        for(int[] column: irregularArray){ // for each loop prints out each element in the 2 dimensional irregular array
             for(int row: column){
                 System.out.print(row + " | ");
             }

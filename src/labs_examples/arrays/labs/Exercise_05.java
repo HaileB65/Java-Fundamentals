@@ -18,14 +18,24 @@ public class Exercise_05 {
              System.out.print(val + " | ");
          }
      }
-        System.out.println();
-        System.out.println("----------");
 
-        for(int val = array.length-1; val>=0; val--){ // prints out the array backwards and skips every other element
-            if(val % 2 == 0){
-                System.out.print(array[val] + " | ");
-            }
-        }
+     System.out.println();
+     System.out.println("----------");
+
+     // this for loop should work but needs to print out every other element in reverse of the array
+//     for(int i = array.length; i >=0; i--){ // prints every other element in the array
+//         if(i % 2 == 0){
+//             System.out.print(i + " | ");
+//         }
+//     }
+
+        // this for loop make program freeze
+//   for(int val = array.length-1; val>=0; val--){ // prints out the array backwards and skips every other element
+//       if(val % 2 == 0){
+//          System.out.print(array[val] + " | ");
+//       }
+//    }
+
 
 
     }
