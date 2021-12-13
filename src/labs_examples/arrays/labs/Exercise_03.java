@@ -21,8 +21,9 @@ public class Exercise_03 {
         int[][] twoDArray = new int[5][5];
 
         for (int i=0; i <twoDArray.length; i++){ // populates the 2DArray
-            for(int j=0; j<twoDArray[i].length; j++){
-                twoDArray[i][j] = (i * j) * 3; // Ask how to iterate in 2dArray in multiples of 3?
+            twoDArray[i][0] = ((i * 5)+ 1) * 3;
+            for(int j=1; j<twoDArray[i].length; j++){
+                twoDArray[i][j] = twoDArray[i][0] + (j * 3);
             }
         }
 

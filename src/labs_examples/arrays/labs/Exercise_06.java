@@ -19,23 +19,26 @@ public class Exercise_06 {
 
         int temp;
 
-        // Question: in the for loop below, why do we divide "nums.length" by 2? Ask for correct answer?
+        // Question: in the for loop below, why do we divide "nums.length" by 2?
+        // b/c you only need to switch the first 3 numbers (aka half of the array length)
+        // before placing the 3 stored values into the last 3 indexes.
         for(int i = 0; i < nums.length / 2; i++){
             // swap elements at indexes in array
             // you have two indices readily available for you to use "i" (which increments) and "nums.length"
             // you've also got this "temp" variable you can use to hold a value temporarily
+
+            // mirrors array
+            temp = nums[i];
+            nums[i] = nums[nums.length-1-i];
+            nums[nums.length-1-i] = temp;
+
         }
+
         System.out.print("Contents of array after for loop - ");
         // print each element of the array to verify reverse order
         for(int i : nums){
             System.out.print(i + " ");
         }
-        System.out.println();
 
-        System.out.print("Contents of array reversed - ");
-        for(temp = nums.length-1; temp>=0; temp--){
-                System.out.print(nums[temp] + " ");
-        }
     }
-
 }
