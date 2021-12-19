@@ -13,12 +13,8 @@ public class Exercise_01 {
         // call each of those methods from here, within the main()
         int a = 64;
         int b = 8;
-        String v = "";
         double c = 0;
-        String e = "Hello New World!";
-
-
-
+        int v = 0;
 
         int x = multiply(a, b);
         System.out.println("Using Multiply Method: x = " + x);
@@ -29,6 +25,9 @@ public class Exercise_01 {
 
         double sec = yearsToSeconds(c);
         System.out.println("There are " + sec + " seconds in the number of years you entered.");
+
+        int count1 = varargsMethod("Hi!", "Hello!", "Hey!");
+        System.out.println("Using varargs method: Count1 is " + count1);
 
     }
 
@@ -48,11 +47,23 @@ public class Exercise_01 {
 
 
     // 3) Create a static void method that will print of joke of your choice to the console
-    public static void userEnteredJoke(String v){
+    public static void userEnteredJoke(int v){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Using void method: Enter your favorite joke: ");
-        v = scanner.next();
-        System.out.println("Entered joke:"+ v);
+        System.out.print("Using void method: Enter a number between 1 and 3.\n");
+        v = scanner.nextInt();
+        if (v==1){
+            System.out.println("Why was six afraid of seven?\n" +
+                    "Because seven eight (ate) nine!");
+        }
+        if (v==2){
+            System.out.println("Why did the mushroom like to party so much?\n" +
+                    "Because he was a fun-guy.");
+        }
+        if (v==3){
+            System.out.println("What did the triangle say to the circle?\n" +
+                    "You're pointless.");
+        }
+
     }
 
 
@@ -68,13 +79,12 @@ public class Exercise_01 {
 
 
     // 5) Create a varargs method that will return the length of the varargs array passed in
-
-    //need to finish varargs method
-    public void varargsMethod(String...v){
+    public static int varargsMethod(String...v){
+        int count = 0;
         for(String word : v){
-            System.out.println(word);
+            count++;
         }
+        return count;
     }
-
 
 }
