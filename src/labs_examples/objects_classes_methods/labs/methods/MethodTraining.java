@@ -1,5 +1,7 @@
 package labs_examples.objects_classes_methods.labs.methods;
 
+import java.util.Scanner;
+
 class my_number{ // meant to be toward beginning of program. part of pass by reference example
 
     public int number;
@@ -38,10 +40,13 @@ public class MethodTraining {
         int consonants = numberOfConsonantsInString(str1);
         System.out.println("Number of vowels in string = " + consonants);
 
+        int number = 0;
+        primeNumber(number); // calling prime number method. passing variable e into method
+
     }
 
 
-    //demonstrating how to overload a method
+    // 1) demonstrating how to overload a method
     public static int multiply(int a, int b) {
         return a * b;
     }
@@ -50,18 +55,18 @@ public class MethodTraining {
         return a * b * d;
     }
 
-    // pass by value
+    // 2) pass by value
     public static int divide(int a, int b) {
         return a / b;
     }
 
 
-    // pass by reference
+    // 3) pass by reference
     public static void update(my_number obj) {
         obj.number++;
     }
 
-    //return the largest of 4 numbers method
+    // 4) return the largest of 4 numbers method
     public static double largestNumber(int a, int b, int c, double d) {
         if (a > b && b > c && c > d) {
             return a;
@@ -73,7 +78,7 @@ public class MethodTraining {
             return d;
     }
 
-    //Write a method to count all consonants (the opposite of vowels) in a String
+    // 5) Write a method to count all consonants (the opposite of vowels) in a String
     public static int numberOfConsonantsInString(String str1){
         int count = str1.length();
         for(int i=0; i < str1.length(); i++)
@@ -83,11 +88,30 @@ public class MethodTraining {
         return count;
     }
 
-    //Write a method that will determine whether or not a number is prime
-public static int primeNumber(int e){
-        
+    // 6) Write a method that will determine whether or not a number is prime.
+    // To prove whether a number is a prime number, first try dividing it by 2, and see if you get a whole number.
+    // If you do, it can't be a prime number. If you don't get a whole number, next try dividing it by
+    // prime numbers: 3, 5, 7, 11 (9 is divisible by 3) and so on, always dividing by a prime number (see table below).
+    public static void primeNumber(int number) { // complete method that determines if a number is prime or not
+
+        for (int i = 0; i <= 2; i++) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("\n" + "Enter a number ");
+            number = scanner.nextInt();
+
+            int[] primeNumberList = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67}; // array called primeNumberList
+
+//            for (int element : primeNumberList) {
+//                if (number % element == 0) { // if loop that prints out if the number is even or odd
+//                    System.out.println(number + " is not a prime number even number");
+//                } else if (number % 3 == 0) {
+//                    System.out.println(number + " is a prime number?");
+//                }
+//            }
+        }
+    }
+
 
 }
 
-}
 
