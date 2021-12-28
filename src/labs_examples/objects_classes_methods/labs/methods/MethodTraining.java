@@ -1,5 +1,6 @@
 package labs_examples.objects_classes_methods.labs.methods;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class my_number{ // meant to be toward beginning of program. part of pass by reference example
@@ -42,6 +43,12 @@ public class MethodTraining {
 
         int number = 0;
         primeNumber(number); // calling prime number method. passing variable e into method
+
+//        int maxNum = 18;
+//        int divisor1 = 6;
+//        int divisor2 = 9;
+//        populatingArrayList(maxNum, divisor1, divisor2); // calling populatingArrayList method
+
 
     }
 
@@ -89,27 +96,55 @@ public class MethodTraining {
     }
 
     // 6) Write a method that will determine whether or not a number is prime.
-    // To prove whether a number is a prime number, first try dividing it by 2, and see if you get a whole number.
-    // If you do, it can't be a prime number. If you don't get a whole number, next try dividing it by
-    // prime numbers: 3, 5, 7, 11 (9 is divisible by 3) and so on, always dividing by a prime number (see table below).
+    // need help to make method cycle through list of prime numbers until either number
+    // is found not to be prime or given number is reached on the primeNumberList list
     public static void primeNumber(int number) { // complete method that determines if a number is prime or not
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\n" + "Enter a number between 1 and 67: ");
+        number = scanner.nextInt();
 
-        for (int i = 0; i <= 2; i++) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("\n" + "Enter a number ");
-            number = scanner.nextInt();
+        int[] primeNumberList = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67}; // array called primeNumberList
 
-            int[] primeNumberList = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67}; // array called primeNumberList
-
-//            for (int element : primeNumberList) {
-//                if (number % element == 0) { // if loop that prints out if the number is even or odd
-//                    System.out.println(number + " is not a prime number even number");
-//                } else if (number % 3 == 0) {
-//                    System.out.println(number + " is a prime number?");
-//                }
-//            }
+        for (int z = 0 ; z > 0 ; z++){
+            System.out.println(primeNumberList[z]);
         }
+
+        for (int i = number; i <= number; i++) {
+            if (number % 2 == 0) { // if else loop that prints out if the number is a whole number or not
+                System.out.println(number + " is not a prime number even number");
+            } else if (number % 2 != 0) {
+                System.out.println(number + " is a prime number");
+            }
+        }
+
+//        for (int i = 0; i == primeNumberList.length; i++) {
+//            if (number % primeNumberList[i] == 0) { // if else loop that prints out if the number is a whole number or not
+//                System.out.println(number + " is not a prime number even number");
+//            } else {
+//                System.out.println(number + " is a prime number");
+//            }
+//        }
     }
+
+
+//    7) Write a method that takes 3 arguments (int maxNum, int divisor1, int divisor2) and returns an Integer Arraylist.
+//    In this method create an Integer ArrayList and populate it with each number between zero and maxNum that is
+//    divisible by both divisor1 and divisor2. Then return this ArrayList. After calling this method, print out the
+//    length of the returned list
+
+//      Finish method number 7
+
+//    public static int populatingArrayList(int maxNum, int divisor1, int divisor2){
+//
+//        ArrayList<String> range = new ArrayList<String>();
+//
+//        for (int i = 0; i == 18; i++){
+//
+//        }
+//
+//        return range;
+//    }
+
 
 
 }
