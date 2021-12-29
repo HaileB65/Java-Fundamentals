@@ -26,28 +26,31 @@ public class MethodTraining {
 
         double g = largestNumber(a, b, c, d);
 
-        System.out.println("a x b = " + c);
-        System.out.println("a x b x f = " + e);
-        System.out.println("a / b = " + f);
+        System.out.println("1) a x b = " + c);
+        System.out.println("1) a x b x f = " + e);
+        System.out.println("2) a / b = " + f);
 
         my_number obj = new my_number(); // creating an object for pass by reference example
-        System.out.println("Orginal object value = " + obj.number); // printing original object value
+        System.out.println("2) Orginal object value = " + obj.number); // printing original object value
         update(obj); // updating object
         System.out.println("Object value after update = " + obj.number); // // printing object value after update
 
-        System.out.println("The largest number is equal to " + g);
+        System.out.println("3) The largest number is equal to " + g);
 
         String str1 = "Hello";
         int consonants = numberOfConsonantsInString(str1);
-        System.out.println("Number of vowels in string = " + consonants);
+        System.out.println("4) Number of Consonants in string = " + consonants);
 
         int number = 0;
         primeNumber(number); // calling prime number method. passing variable e into method
 
-//        int maxNum = 18;
-//        int divisor1 = 6;
-//        int divisor2 = 9;
-//        populatingArrayList(maxNum, divisor1, divisor2); // calling populatingArrayList method
+        System.out.println("6) STILL NEED TO WRITE METHOD #   6");
+//        highLow();
+
+        int maxNum = 72;
+        int divisor1 = 6;
+        int divisor2 = 9;
+        populatingArrayList(maxNum, divisor1, divisor2); // calling populatingArrayList method
 
 
     }
@@ -68,12 +71,12 @@ public class MethodTraining {
     }
 
 
-    // 3) pass by reference
+    // 2) pass by reference
     public static void update(my_number obj) {
         obj.number++;
     }
 
-    // 4) return the largest of 4 numbers method
+    // 3) return the largest of 4 numbers method
     public static double largestNumber(int a, int b, int c, double d) {
         if (a > b && b > c && c > d) {
             return a;
@@ -85,7 +88,7 @@ public class MethodTraining {
             return d;
     }
 
-    // 5) Write a method to count all consonants (the opposite of vowels) in a String
+    // 4) Write a method to count all consonants (the opposite of vowels) in a String
     public static int numberOfConsonantsInString(String str1){
         int count = str1.length();
         for(int i=0; i < str1.length(); i++)
@@ -95,12 +98,12 @@ public class MethodTraining {
         return count;
     }
 
-    // 6) Write a method that will determine whether or not a number is prime.
+    // 5) Write a method that will determine whether or not a number is prime.
     // need help to make method cycle through list of prime numbers until either number
     // is found not to be prime or given number is reached on the primeNumberList list
     public static void primeNumber(int number) { // complete method that determines if a number is prime or not
         Scanner scanner = new Scanner(System.in);
-        System.out.print("\n" + "Enter a number between 1 and 67: ");
+        System.out.print("5) Enter a number between 1 and 67: ");
         number = scanner.nextInt();
 
         int[] primeNumberList = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67}; // array called primeNumberList
@@ -127,23 +130,38 @@ public class MethodTraining {
     }
 
 
+
+//    6) Write a method that will return a small array containing the highest and lowest numbers in a given numeric array,
+//    which is passed in as an argument
+    //NEED to finish
+//    public static void highLow(){
+//        int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//        System.out.println(list);
+//
+//    }
+
+
+
 //    7) Write a method that takes 3 arguments (int maxNum, int divisor1, int divisor2) and returns an Integer Arraylist.
 //    In this method create an Integer ArrayList and populate it with each number between zero and maxNum that is
 //    divisible by both divisor1 and divisor2. Then return this ArrayList. After calling this method, print out the
 //    length of the returned list
+    public static int populatingArrayList(int maxNum, int divisor1, int divisor2){
+        int s = 0;
+        ArrayList<Integer> factorList = new ArrayList<Integer>();
+        for (int i = 0; i <= maxNum; i++){
+            if (i % divisor1 == 0){
+                if (i % divisor2 == 0) {
+                    factorList.add(i);
+                    s++;
+                }
+            }
+        }
+        System.out.println("7) Factor list length = " + s);
+        System.out.println("Factor list of " + maxNum + " = " + factorList);
+        return s;
 
-//      Finish method number 7
-
-//    public static int populatingArrayList(int maxNum, int divisor1, int divisor2){
-//
-//        ArrayList<String> range = new ArrayList<String>();
-//
-//        for (int i = 0; i == 18; i++){
-//
-//        }
-//
-//        return range;
-//    }
+    }
 
 
 
