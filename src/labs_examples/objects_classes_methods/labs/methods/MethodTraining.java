@@ -1,6 +1,7 @@
 package labs_examples.objects_classes_methods.labs.methods;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 class my_number{ // meant to be toward beginning of program. part of pass by reference example
@@ -44,13 +45,20 @@ public class MethodTraining {
         int number = 0;
         primeNumber(number); // calling prime number method. passing variable e into method
 
-        System.out.println("6) STILL NEED TO WRITE METHOD #   6");
-//        highLow();
+        int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int [] highestAndLowestArray = highLow(list); // calling highlow method
+        System.out.print("6) Lowest and highest number in given array = ");
+        for (int element : highestAndLowestArray) {
+            System.out.print(element + " | ");
+        }
 
         int maxNum = 72;
         int divisor1 = 6;
         int divisor2 = 9;
         populatingArrayList(maxNum, divisor1, divisor2); // calling populatingArrayList method
+
+        reversed();
+        System.out.print("8) Reverse array = ");
 
 
     }
@@ -133,12 +141,11 @@ public class MethodTraining {
 
 //    6) Write a method that will return a small array containing the highest and lowest numbers in a given numeric array,
 //    which is passed in as an argument
-    //NEED to finish
-//    public static void highLow(){
-//        int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-//        System.out.println(list);
-//
-//    }
+    public static int[] highLow(int[] list){
+        Arrays.sort(list);
+        int [] highestAndLowestArray = {list[0], list[list.length-1]};
+        return highestAndLowestArray;
+    }
 
 
 
@@ -157,9 +164,20 @@ public class MethodTraining {
                 }
             }
         }
-        System.out.println("7) Factor list length = " + s);
+        System.out.println('\n' + "7) Factor list length = " + s);
         System.out.println("Factor list of " + maxNum + " = " + factorList);
         return s;
+
+    }
+
+//    8) Write a method that will reverse an array in place use only one extra temp variable. For this exercise you cannot
+//    instantiate a second array. You must reverse the array in place using only one extra temp variable. Hint: this
+//    variable is used to temporarily store individual values in the array
+    //NEED to finish
+    public static void reversed(){
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
+        int temp;
+        int [] reversedArray = new int[6];
 
     }
 
