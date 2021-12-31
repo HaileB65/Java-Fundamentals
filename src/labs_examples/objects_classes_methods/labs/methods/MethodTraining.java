@@ -57,10 +57,7 @@ public class MethodTraining {
         int divisor2 = 9;
         populatingArrayList(maxNum, divisor1, divisor2); // calling populatingArrayList method
 
-        reversed();
-        System.out.print("8) Reverse array = ");
-
-
+        reversed(); // calling reversed array
     }
 
 
@@ -173,12 +170,24 @@ public class MethodTraining {
 //    8) Write a method that will reverse an array in place use only one extra temp variable. For this exercise you cannot
 //    instantiate a second array. You must reverse the array in place using only one extra temp variable. Hint: this
 //    variable is used to temporarily store individual values in the array
-    //NEED to finish
     public static void reversed(){
         int[] array = {1, 2, 3, 4, 5, 6, 7};
+        System.out.print("8) Original array = ");
+        for (int element : array) {
+            System.out.print(element + " | ");
+        }
+        System.out.println();
         int temp;
-        int [] reversedArray = new int[6];
+        for (int i=0; i<=2; i++) {
+            temp = array[i];
+            array[i] = array[array.length-1-i];
+            array[array.length-1-i] = temp;
+        }
 
+        System.out.print("Reversed array = ");
+        for (int value : array) {
+            System.out.print(value + " | ");
+        }
     }
 
 
