@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class my_number{ // meant to be toward beginning of program. part of pass by reference example
+class MyNumber { // part of pass by reference example
 
     public int number;
-    public my_number()
+    public MyNumber()
     {
         number = 1;
     }
@@ -31,10 +31,12 @@ public class MethodTraining {
         System.out.println("1) a x b x f = " + e);
         System.out.println("2) a / b = " + f);
 
-        my_number obj = new my_number(); // creating an object for pass by reference example
+        MethodTraining md = new MethodTraining();
+        MethodTraining md2 = new MethodTraining();
+        MyNumber obj = new MyNumber(); // creating an object for pass by reference example
         System.out.println("2) Orginal object value = " + obj.number); // printing original object value
         update(obj); // updating object
-        System.out.println("Object value after update = " + obj.number); // // printing object value after update
+        System.out.println("Object value after update = " + obj.number); // printing object value after update
 
         System.out.println("3) The largest number is equal to " + g);
 
@@ -42,8 +44,16 @@ public class MethodTraining {
         int consonants = numberOfConsonantsInString(str1);
         System.out.println("4) Number of Consonants in string = " + consonants);
 
-        int number = 0;
-        primeNumber(number); // calling prime number method. passing variable e into method
+        int number;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("5) Enter a number between 1 and 67: ");
+        number = scanner.nextInt();
+        isPrime(number); // calling prime number method. passing variable e into method
+        if(isPrime(number)){
+            System.out.println(number + " is a prime number");
+        } else {
+            System.out.println(number + " is not a prime number");
+        }
 
         int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int [] highestAndLowestArray = highLow(list); // calling highlow method
@@ -77,7 +87,7 @@ public class MethodTraining {
 
 
     // 2) pass by reference
-    public static void update(my_number obj) {
+    public static void update(MyNumber obj) {
         obj.number++;
     }
 
@@ -106,24 +116,13 @@ public class MethodTraining {
     // 5) Write a method that will determine whether or not a number is prime.
     // need help to make method cycle through list of prime numbers until either number
     // is found not to be prime or given number is reached on the primeNumberList list
-    public static void primeNumber(int number) { // complete method that determines if a number is prime or not
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("5) Enter a number between 1 and 67: ");
-        number = scanner.nextInt();
-
-        int[] primeNumberList = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67}; // array called primeNumberList
-
-        for (int z = 0 ; z > 0 ; z++){
-            System.out.println(primeNumberList[z]);
-        }
-
-        for (int i = number; i <= number; i++) {
-            if (number % 2 == 0) { // if else loop that prints out if the number is a whole number or not
-                System.out.println(number + " is not a prime number even number");
-            } else if (number % 2 != 0) {
-                System.out.println(number + " is a prime number");
+    public static boolean isPrime(int number) { // complete method that determines if a number is prime or not
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) { // if else loop that prints out if the number is a whole number or not
+                return false;
             }
         }
+        return true;
 
 //        for (int i = 0; i == primeNumberList.length; i++) {
 //            if (number % primeNumberList[i] == 0) { // if else loop that prints out if the number is a whole number or not
