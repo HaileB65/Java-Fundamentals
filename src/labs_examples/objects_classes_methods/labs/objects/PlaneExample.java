@@ -3,42 +3,58 @@ package labs_examples.objects_classes_methods.labs.objects;
 public class PlaneExample {
     public static void main(String[] args) {
 
-        Fuel myFuel = new Fuel(600, 450);
+        Engine myEngine = new Engine(30843);
+        Weight myWeight = new Weight(187000);
+        Fuel myFuel = new Fuel(187000, 99000);
+
+        Plane myPlane = new Plane(myEngine, myWeight, myFuel);
+        System.out.println(myPlane);
 
     }
 
-    class Velocity {
-        byte speed;
-        public Velocity(byte speed){
-            this.speed = speed;
 
+    static class Engine{
+        private double horsePower;
+        public Engine(double horsePower){
+         this.horsePower = horsePower;
         }
+
+//        public double getHorsePower() {
+//            return horsePower;
+//        }
+//
+//        public void setHorsePower(double horsePower) {
+//            this.horsePower = horsePower;
+//        }
 
         @Override
         public String toString() {
-            return "Velocity{" +
-                    "speed=" + speed +
+            return "Engine{" +
+                    "horsePower=" + horsePower +
                     '}';
         }
     }
 
-    class Make{
-        String color;
+    static class Weight{
+        private double maxPayload;
 
-        public Make(String color) {
-            this.color = color;
+        public Weight(double maxPayload) {
+            this.maxPayload = maxPayload;
         }
-    }
-    class WheelQuantity{
 
+        @Override
+        public String toString() {
+            return "Weight{" +
+                    "maxPayload=" + maxPayload +
+                    '}';
+        }
     }
 
     static class Fuel{
-        double fuelCapacity;
-        double currentFuelLevel;
+        private double fuelCapacity;
+        private double currentFuelLevel;
 
-        public Fuel(double fuelCapacity, double
-                currentFuelLevel)){
+        public Fuel(double fuelCapacity, double currentFuelLevel){
             this.fuelCapacity = fuelCapacity;
             this.currentFuelLevel = currentFuelLevel;
         }
@@ -47,6 +63,28 @@ public class PlaneExample {
         public String toString() {
             return "Fuel{" +
                     "fuelCapacity=" + fuelCapacity +
+                    ", currentFuelLevel=" + currentFuelLevel +
+                    '}';
+        }
+    }
+
+    static class Plane{
+        private Engine engine;
+        private Weight weight;
+        private Fuel fuel;
+
+        public Plane(Engine engine, Weight weight, Fuel fuel){
+            this.engine = engine;
+            this.weight = weight;
+            this.fuel = fuel;
+        }
+
+        @Override
+        public String toString() {
+            return "Plane{" +
+                    "engine=" + engine +
+                    ",\n weight=" + weight +
+                    ",\n fuel=" + fuel +
                     '}';
         }
     }
