@@ -10,6 +10,18 @@ public class PlaneExample {
         Plane myPlane = new Plane(myEngine, myWeight, myFuel);
         System.out.println(myPlane);
 
+        myEngine.setHorsePower(20243); // using setter method to set a new horsepower number
+        System.out.println("\nNew horsepower = " + myEngine.getHorsePower()); // using getter method to retrieve new horsepower number
+        myWeight.setMaxPayload(99000); // setting new maxpayload number
+        System.out.println("New maxPayload = " + myWeight.getMaxPayload()); // using getter method to retrieve new max payload number
+        myFuel.setFuelCapacity(86000);
+        System.out.println("New fuel capacity = " + myFuel.getFuelCapacity());
+        myFuel.setCurrentFuelLevel(6000);
+        System.out.println("New current fuel level = " + myFuel.getCurrentFuelLevel());
+
+        System.out.println(myEngine); // using to tostring() method in Engine class to print out values of each variable in Engine class
+        System.out.println(myFuel); // using to tostring() method in Fuel class to print out values of each variable in Fuel class
+
     }
 
 
@@ -19,13 +31,13 @@ public class PlaneExample {
          this.horsePower = horsePower;
         }
 
-//        public double getHorsePower() {
-//            return horsePower;
-//        }
-//
-//        public void setHorsePower(double horsePower) {
-//            this.horsePower = horsePower;
-//        }
+        public double getHorsePower() {
+            return horsePower;
+        }
+
+        public void setHorsePower(double newHorsePower) {
+            this.horsePower = newHorsePower;
+        }
 
         @Override
         public String toString() {
@@ -40,6 +52,14 @@ public class PlaneExample {
 
         public Weight(double maxPayload) {
             this.maxPayload = maxPayload;
+        }
+
+        public double getMaxPayload() {
+            return maxPayload;
+        }
+
+        public void setMaxPayload(double newmaxPayload) {
+            this.maxPayload = newmaxPayload;
         }
 
         @Override
@@ -57,6 +77,22 @@ public class PlaneExample {
         public Fuel(double fuelCapacity, double currentFuelLevel){
             this.fuelCapacity = fuelCapacity;
             this.currentFuelLevel = currentFuelLevel;
+        }
+
+        public double getFuelCapacity() {
+            return fuelCapacity;
+        }
+
+        public void setFuelCapacity(double newFuelCapacity) {
+            this.fuelCapacity = newFuelCapacity;
+        }
+
+        public double getCurrentFuelLevel() {
+            return currentFuelLevel;
+        }
+
+        public void setCurrentFuelLevel(double newCurrentFuelLevel) {
+            this.currentFuelLevel = newCurrentFuelLevel;
         }
 
         @Override
