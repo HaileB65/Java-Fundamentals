@@ -22,6 +22,18 @@ public class PlaneExample {
         System.out.println(myEngine); // using to tostring() method in Engine class to print out values of each variable in Engine class
         System.out.println(myFuel); // using to tostring() method in Fuel class to print out values of each variable in Fuel class
 
+        //part of exercise 5
+        Books narnia = new Books();
+        Books harryPotter = new Books(25);
+        Books aladdin = new Books(12,110);
+
+        System.out.println("\n" + "Part of exercise 5 problem 3");
+        System.out.println("Number of chapters and pages in Narnia " + narnia);
+        System.out.println("Number of chapters and pages in Harry Potter " + harryPotter);
+        System.out.println("Number of chapters and pages in Aladdin " + aladdin);
+
+
+
     }
 
 

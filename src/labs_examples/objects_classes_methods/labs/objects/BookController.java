@@ -29,4 +29,12 @@ class Books {
         this.chapters = chapters;
         this.pages = pages;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "chapters=" + chapters +
+                ", pages=" + pages +
+                '}';
+    }
 }
