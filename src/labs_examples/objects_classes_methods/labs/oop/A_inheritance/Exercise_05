@@ -1,6 +1,8 @@
 
 Without running the code below, please tell me what will print. Why?
 
+Answer: "Child called" will be printed out b/c a instance of the Child class has been created. In this case, when
+a instance of the Child class is created its default constructor will have "Child called" printed out.
 
 
 

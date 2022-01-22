@@ -1,9 +1,11 @@
-package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
+package labs_examples.objects_classes_methods.labs.oop.A_inheritance.exercise3;
 
 /**
  * Why does the output print in the order it does?
  *
- * You answer:
+ * You answer: A object of class "C" has been created. Class "C" extends class "B" which extends class "A". Therefore,
+ * any object created from class "C" will inherit/print out the behavior and methods from both class "A" and "B".
+ * Methods inherited from class "A" and "B" will print out before printing out any methods from class "C".
  *
  */
 

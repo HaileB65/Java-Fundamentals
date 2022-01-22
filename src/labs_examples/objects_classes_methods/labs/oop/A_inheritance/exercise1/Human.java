@@ -7,10 +7,9 @@ public class Human extends Primate{
     }
 
     @Override
-    public static void holdAnimal(){
-        System.out.println("If a baby cradle in arms and support the head");
+    public void holdAnimal(){
+        System.out.println("If baby, cradle with both arms and support head");
     }
-
 
     @Override
     public String toString() {

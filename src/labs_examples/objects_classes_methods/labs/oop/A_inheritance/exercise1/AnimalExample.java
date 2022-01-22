@@ -7,6 +7,7 @@ public class AnimalExample {
         Mammal bear = new Mammal("Bear", 4, true);
         Primate monkey = new Primate("Monkey", 2, true, true);
         Human fred = new Human("Fred", 2, false, false);
+        Gorilla silverBack = new Gorilla("SilverBack", 2,true,false);
         Reptile snake = new Reptile("Snake",0,false);
 
         System.out.println(rat);
@@ -17,8 +18,12 @@ public class AnimalExample {
 
         System.out.println();
 
-        Human.holdAnimal();
-        Gorilla.holdAnimal();
+        rat.holdAnimal(); // runs holdAnimal() method from parent class called Animal
+        monkey.holdAnimal(); // runs holdAnimal() method from subclass Primate
+        fred.holdAnimal(); // runs holdAnimal() method from subclass Human
+        silverBack.holdAnimal(); // runs holdAnimal() method from subclass Gorilla
+
+
 
 
     }

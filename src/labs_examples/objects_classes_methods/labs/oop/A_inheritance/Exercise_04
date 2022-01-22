@@ -1,6 +1,7 @@
 
 Without running the code below, please tell me what it will print.
 
+Answer: "Child called" will print in red letters.
 
 
 public class InheritanceTest

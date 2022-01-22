@@ -1,9 +1,9 @@
-package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
+package labs_examples.objects_classes_methods.labs.oop.A_inheritance.exercise2;
 
 /**
  * Run the class below and study the output. What prints and why?
  *
- * Your answer:
+ * Your answer: 10 prints out b/c the integer "i" is called from class "A" where "i" = 10.
  *
  */
 class A {

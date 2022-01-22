@@ -7,9 +7,9 @@ public class Primate extends Mammal {
         super(name, numbLegs, hasFur);
         this.hasTail = hasTail;
     }
-
+    @Override
     public void holdAnimal(){
-        System.out.println("Hold Animal");
+        System.out.println("Holding Animal");
     }
 
     @Override

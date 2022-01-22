@@ -5,10 +5,9 @@ public class Gorilla extends Primate {
     public Gorilla(String name, int numbLegs, boolean hasFur, boolean hasTail){
         super(name, numbLegs, hasFur, hasTail);
     }
-
     @Override
-    public static void holdAnimal(){
-        System.out.println("Gorilla too heavy to hold");
+    public void holdAnimal(){
+        System.out.println("Gorilla to large to hold");
     }
 
     @Override

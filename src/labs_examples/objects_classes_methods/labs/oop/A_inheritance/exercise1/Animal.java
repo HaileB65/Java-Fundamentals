@@ -11,6 +11,10 @@ public class Animal {
         this.hasFur = hasFur;
     }
 
+    public void holdAnimal(){
+        System.out.println("Pick up animal");
+    }
+
     @Override
     public String toString() {
         return "Animal{" +
