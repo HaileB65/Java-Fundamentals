@@ -20,6 +20,12 @@ public class SolarSystem {
         this. planetInGoldilocksZone = planetInGoldilocksZone;
     }
 
+    public void explore(){
+        System.out.println("Flying to solar system");
+        System.out.println("Flying to center of solar system");
+        System.out.println("Taking survey of number of planets");
+    }
+
     @Override
     public String toString() {
         return "SolarSystem{" +
