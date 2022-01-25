@@ -1,6 +1,6 @@
 package labs_examples.objects_classes_methods.labs.objects.exercise3;
 
-public class PersonDogAssociation{
+public class PersonDogExample {
     public static void main(String[] args) {
 
         Person p = new Person("Chris");

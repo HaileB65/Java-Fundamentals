@@ -7,7 +7,7 @@ public class PlaneExample {
 
         Engine myEngine = new Engine(30843);
         Weight myWeight = new Weight(187000);
-        Fuel myFuel = new Fuel(187000, 99000);
+        Fuel myFuel = new Fuel(97000, 66000);
 
         Plane myPlane = new Plane(myEngine, myWeight, myFuel);
         System.out.println(myPlane);
@@ -16,13 +16,15 @@ public class PlaneExample {
         System.out.println("\nNew horsepower = " + myEngine.getHorsePower()); // using getter method to retrieve new horsepower number
         myWeight.setMaxPayload(99000); // setting new maxpayload number
         System.out.println("New maxPayload = " + myWeight.getMaxPayload()); // using getter method to retrieve new max payload number
-        myFuel.setFuelCapacity(86000);
+        myFuel.setFuelCapacity(77000);
         System.out.println("New fuel capacity = " + myFuel.getFuelCapacity());
-        myFuel.setCurrentFuelLevel(6000);
+        myFuel.setCurrentFuelLevel(45000);
         System.out.println("New current fuel level = " + myFuel.getCurrentFuelLevel());
 
+        System.out.println();
         System.out.println(myEngine); // using to tostring() method in Engine class to print out values of each variable in Engine class
         System.out.println(myFuel); // using to tostring() method in Fuel class to print out values of each variable in Fuel class
+        System.out.println(myPlane);
 
         //part of exercise 5
         Book narnia = new Book();

@@ -11,8 +11,8 @@ public class Weight {
         return maxPayload;
     }
 
-    public void setMaxPayload(double newmaxPayload) {
-        this.maxPayload = newmaxPayload;
+    public void setMaxPayload(double newMaxPayload) {
+        this.maxPayload = newMaxPayload;
     }
 
     @Override
