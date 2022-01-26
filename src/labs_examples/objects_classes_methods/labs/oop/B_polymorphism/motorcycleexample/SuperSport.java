@@ -1,9 +1,9 @@
 package labs_examples.objects_classes_methods.labs.oop.B_polymorphism.motorcycleexample;
 
-public class SuperSport extends Motorcycle implements StartStopInterface {
+public class SuperSport extends Motorcycle implements VehicleStartStop {
 
-    public SuperSport(String name, int cc, int numbOfWheels){
-        super(name, cc, numbOfWheels);
+    public SuperSport(String name, int cc){
+        super(name, cc);
     }
 
     @Override

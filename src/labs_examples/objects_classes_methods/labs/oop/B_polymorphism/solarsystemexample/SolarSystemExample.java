@@ -1,6 +1,6 @@
 package labs_examples.objects_classes_methods.labs.oop.B_polymorphism.solarsystemexample;
 
-public class SolarSystemController {
+public class SolarSystemExample {
     public static void main(String[] args) {
 
         SolarSystem milkyWay = new SolarSystem("Milky Way", 8, true);
