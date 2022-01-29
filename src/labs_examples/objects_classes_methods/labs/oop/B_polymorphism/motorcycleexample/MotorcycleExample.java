@@ -35,7 +35,7 @@ public class MotorcycleExample {
         // demonstrating using an interface as an instance variable.
         System.out.println();
         MotorizedVehicle morpho = new MotorizedVehicle(ducatiMonster);
-        morpho.testVehicle(); // ducatiMonster set in previous line as motorcycle to be tested
+        morpho.testVehicle(); // ducatiMonster set in previous line is being tested
         System.out.println("------------");
         morpho.setMotorizedVehicle(hondaRebel); // changed vehicle being used to hondaRebel
         morpho.testVehicle(); // testing hondaRebel
