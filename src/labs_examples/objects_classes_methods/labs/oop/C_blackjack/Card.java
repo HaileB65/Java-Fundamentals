@@ -1,13 +1,23 @@
 package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
 
-public class Card {
-    public char newSuit;
-    char[] suit = new char[]{'♠', '♦', '♥', '♣'};
-    int cardValue;
+import java.util.Arrays;
 
-    public Card(int cardValue, char newSuit){
+public class Card {
+    String suit;
+    String cardValue;
+
+    public Card(String cardValue, String suit){
         this.cardValue = cardValue;
-        this.newSuit = newSuit;
+        this.suit = suit;
 
     }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "cardValue=" + cardValue +
+                ", suit=" + suit +
+                '}';
+    }
+
 }
