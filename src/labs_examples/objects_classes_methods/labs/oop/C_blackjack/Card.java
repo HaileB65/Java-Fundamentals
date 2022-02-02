@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Card {
     String suit;
-    String cardValue;
+    int cardValue;
 
-    public Card(String cardValue, String suit){
+    public Card(int cardValue, String suit){
         this.cardValue = cardValue;
         this.suit = suit;
 

@@ -5,4 +5,11 @@ public class Player {
     Hand hand;
     int potValue;
 
+    public Player(String name, Hand hand){
+        this.name = name;
+        this.hand = hand;
+//        this.potValue = potValue;
+
+    }
+
 }
