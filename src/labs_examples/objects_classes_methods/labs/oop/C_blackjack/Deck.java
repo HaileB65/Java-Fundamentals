@@ -25,11 +25,13 @@ public class Deck {
         do{
             random = (int) (Math.random() * (52)+1);
 
-        }while(!usedCards.contains(random));
+        }while(usedCards.contains(random));
 
         player1.hand.cards.add(cards[random]);
 
         usedCards.add(random);
+
+        player1.hand.getScore();
 
     }
 

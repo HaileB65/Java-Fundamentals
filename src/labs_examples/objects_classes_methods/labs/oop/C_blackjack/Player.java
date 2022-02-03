@@ -5,11 +5,19 @@ public class Player {
     Hand hand;
     int potValue;
 
-    public Player(String name, Hand hand){
+    public Player(String name, Hand hand, int potValue){
         this.name = name;
         this.hand = hand;
-//        this.potValue = potValue;
+        this.potValue = potValue;
 
     }
 
+    @Override
+    public String toString() {
+        return
+                 name + " " +
+                "{" + hand +
+                ", potValue=" + potValue +
+                '}';
+    }
 }

@@ -4,9 +4,9 @@ public class BlackjackController {
     public static void main(String[] args) {
 
         Deck one = new Deck();
-        Hand two = new Hand();
+        Hand jacksHand = new Hand();
 
-        Player Jack = new Player("Jack",two);
+        Player Jack = new Player("Jack",jacksHand, 0);
 
         one.setDeck();
         for(Card c : one.getCards()){
@@ -14,13 +14,18 @@ public class BlackjackController {
         }
         System.out.println("step 1 complete");
 
+
         one.deal(Jack);
         System.out.println("step 2 complete");
 
-        two.addScore();
-        System.out.println("step 3 complete");
+        System.out.println(Jack);
 
-        System.out.println(two.handValue);
-        System.out.println("step 4 complete");
+        Jack.hand.getScore();
+        System.out.println(Jack.hand.getScore());
+
+        System.out.println(Jack);
+
+        Jack.hand.greaterThan21(Jack.hand.handValue);
+
     }
 }
