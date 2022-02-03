@@ -31,8 +31,7 @@ public class Deck {
 
         usedCards.add(random);
 
-        player1.hand.getScore();
-
+        player1.hand.getScore(); // runs getScore() method to give handValue variable a number
     }
 
     public Card[] getCards(){

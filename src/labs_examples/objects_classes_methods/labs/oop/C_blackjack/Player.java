@@ -10,14 +10,19 @@ public class Player {
         this.hand = hand;
         this.potValue = potValue;
 
+
+    }
+
+    public boolean computerAI(Player player1){
+        if(player1.hand.handValue < 16){
+            return true;
+        }else
+            return false;
     }
 
     @Override
     public String toString() {
         return
-                 name + " " +
-                "{" + hand +
-                ", potValue=" + potValue +
-                '}';
+                 name + ", " + hand + ", potValue=" + potValue;
     }
 }

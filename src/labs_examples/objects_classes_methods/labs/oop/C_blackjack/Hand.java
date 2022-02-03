@@ -24,15 +24,15 @@ public class Hand {
         if (handvalue > 21) {
             System.out.println("handvalue " + handvalue + " is over 21");
             return true;
-        }else {
+        }else
             System.out.println("handvalue " + handvalue + " is under 21");
             return false;
         }
-    }
+
 
     @Override
     public String toString() {
-        return "Hand {" +
+        return "Hand{" +
                 "cards=" + cards +
                 ", handValue=" + handValue +
                 '}';
