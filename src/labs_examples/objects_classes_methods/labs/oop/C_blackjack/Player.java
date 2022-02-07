@@ -7,14 +7,13 @@ public class Player {
     Hand hand;
     int potValue;
     int playerWallet;
-    int betValue;
+    int playerBetValue;
+    int computerBetValue;
 
     public Player(String name, Hand hand, int playerWallet){
         this.name = name;
         this.hand = hand;
         this.playerWallet = playerWallet;
-
-
     }
 
     public boolean computerAI(Player player1){
@@ -24,33 +23,34 @@ public class Player {
             return false;
     }
 
-    public void playerPlaceBet(Player player){
+    public int playerPlaceBet(Player player){
         Scanner wantToPlaceBet = new Scanner(System.in); // starts a scanner to scan for players answer
         System.out.print("Place bet value: ");
-        int playerBetValue = wantToPlaceBet.nextInt(); // saves players answer value to int "playerBetValue"
+        playerBetValue = wantToPlaceBet.nextInt(); // saves players answer value to int "playerBetValue"
 
-        betValue = playerBetValue + betValue;
+        player.playerWallet = player.playerWallet - playerBetValue;
+        potValue = potValue + playerBetValue;
 
-        player.playerWallet = player.playerWallet - betValue;
-        potValue = potValue + betValue;
+        System.out.print("Player placed a bet.");
+        System.out.print(" Current pot value: " + potValue + "\n");
 
-        System.out.println("Current pot value" + potValue);
+        return potValue;
     }
 
-    public void computerPlaceBet(Player player){
-        int computerBet = (int) (Math.random() * (playerWallet)+1);
+    public void computerPlaceBet(Player computer, int potValue){
+        computerBetValue = playerBetValue;
 
-        betValue = computerBet + betValue;
+        computer.playerWallet = computer.playerWallet - computerBetValue;
+        potValue = potValue + computerBetValue;
 
-        player.playerWallet = player.playerWallet - betValue;
-        potValue = potValue + betValue;
-
-        System.out.println("Current pot value" + potValue);
+        System.out.print("Computer placed bet.");
+        System.out.print(" Current pot value: " + potValue);
+        System.out.println();
     }
 
     @Override
     public String toString() {
         return
-                 name + ", " + hand + "player wallet= " + ", " + playerWallet + ", potValue=" + potValue;
+                 name + ", " + hand + ", player wallet= " +  playerWallet + ", potValue=" + potValue;
     }
 }
