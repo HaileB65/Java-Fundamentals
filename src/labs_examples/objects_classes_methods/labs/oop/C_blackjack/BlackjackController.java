@@ -25,8 +25,8 @@ public class BlackjackController {
         Player player = new Player(name,playerHand, playerWallet); // creating player and computer players
         Player computer = new Player("Computer",computerHand, playerWallet);
 
-        System.out.println("Player wallet =" + player.playerWallet);
-        System.out.println("Computer wallet =" + computer.playerWallet);
+        System.out.println("Player wallet= " + player.playerWallet);
+        System.out.println("Computer wallet= " + computer.playerWallet);
 
         Deck deck = new Deck(); // creates a deck object
         deck.setDeck(); // creates a deck of cards
@@ -35,72 +35,81 @@ public class BlackjackController {
         System.out.println(player.name + " vs " + computer.name);
         System.out.println();
 
-        player.playerPlaceBet(player);
-        player.computerPlaceBet(computer, player.playerPlaceBet(player));
+        while((player.playerWallet > 0) && (computer.playerWallet> 0)) {
 
-        deck.deal(player); // deals player and computer two cards each
-        deck.deal(player);
-        deck.deal(computer);
-        deck.deal(computer);
+            player.playerPlaceBet(player);
+            player.computerPlaceBet(computer);
 
-        System.out.println();
-        System.out.println(player); // prints out player and computer cards and handValues
-        System.out.println(computer);
+            deck.deal(player); // deals player and computer two cards each
+            deck.deal(player);
+            deck.deal(computer);
+            deck.deal(computer);
 
-        while((player.hand.handValue < 21) && (computer.hand.handValue < 21)) { // continues to ask player if they want a new card
             System.out.println();
-            Scanner dealNextCard = new Scanner(System.in); // starts a scanner and asks player if they want a new card
-            System.out.print("Deal player next card?");
-            String dealNextCardAnswer = dealNextCard.next();  // saves players answer to String "dealNextCardAnswer"
+            System.out.println(player); // prints out player and computer cards and handValues
+            System.out.println(computer);
+            System.out.println("Current pot value= " + player.potValue);
 
-            if(Objects.equals(dealNextCardAnswer, "yes")) {  // gives player a new card or prints "out did not want a new card"
-                deck.deal(player);
-                System.out.println(player.name + " handValue= " + player.hand.handValue);
-            }else if(Objects.equals(dealNextCardAnswer, "no")) {
-                System.out.println(player.name + " did not want a new card");
-            }
-
-            if (computer.computerAI(computer) == true) {  // ask computer if they want a new card
+            while ((player.hand.handValue < 21) && (computer.hand.handValue < 21)) { // continues to ask player if they want a new card
                 System.out.println();
-                deck.deal(computer);
-                System.out.println("Computer dealt new card");
-                System.out.println(computer.name + " handValue= " + computer.hand.handValue);
-            }else if(computer.computerAI(computer) == false) {
-                System.out.println(computer.name + " did not want a new card");
+                Scanner dealNextCard = new Scanner(System.in); // starts a scanner and asks player if they want a new card
+                System.out.print("Deal player next card?");
+                String dealNextCardAnswer = dealNextCard.next();  // saves players answer to String "dealNextCardAnswer"
+
+                if (Objects.equals(dealNextCardAnswer, "yes")) {  // gives player a new card or prints "out did not want a new card"
+                    deck.deal(player);
+                    System.out.println(player.name + " handValue= " + player.hand.handValue);
+                } else if (Objects.equals(dealNextCardAnswer, "no")) {
+                    System.out.println(player.name + " did not want a new card");
+                }
+
+
+                if (computer.computerAI(computer) == true) {  // ask computer if they want a new card
+                    System.out.println();
+                    deck.deal(computer);
+                    System.out.println("Computer dealt new card");
+                    System.out.println(computer.name + " handValue= " + computer.hand.handValue);
+                } else if (computer.computerAI(computer) == false) {
+                    System.out.println(computer.name + " did not want a new card");
+                }
+
+                if ((Objects.equals(dealNextCardAnswer, "no") && (computer.computerAI(computer) == false))) { // breaks while loop
+                    break;                                                                                     // when both user and computer
+                }                                                                                              // say no to a new card
             }
 
-            if((Objects.equals(dealNextCardAnswer, "no") && (computer.computerAI(computer) == false))){ // breaks while loop
-                break;                                                                                     // when both user and computer
-            }                                                                                              // say no to a new card
+            System.out.println();
+            System.out.println("Round finished!");
+            System.out.println();
+            System.out.println("Round scores:");
+            System.out.println(player.name + " handValue= " + player.hand.handValue + ", Remaining wallet= " + (player.playerWallet));
+            System.out.println(computer.name + " handValue= " + computer.hand.handValue + ", Remaining wallet= " + (computer.playerWallet - computer.computerBetValue));
+            System.out.println();
+
+            if (player.hand.handValue > 21) {
+                System.out.println("Player handValue over 21. Player busted!");
+            }
+            if (computer.hand.handValue > 21) {
+                System.out.println("Computer handValue over 21. Computer busted!");
+            }
+
+            if (player.hand.handValue <= 21) {
+                System.out.println(player.name + " won the game and wins $" + player.potValue);
+            }
+            if (computer.hand.handValue <= 21) {
+                System.out.println(computer.name + " won the game and wins $" + player.potValue);
+            }
+
+            System.out.println();
+            System.out.println("Next round");
+
         }
 
         System.out.println();
-        System.out.println("Game finished!");
-        System.out.println();
-        System.out.println("Game scores:");
-        System.out.println(player.name + " handValue= " + player.hand.handValue + ", Remaining wallet= " + (player.playerWallet));
-        System.out.println(computer.name + " handValue= " + computer.hand.handValue + ", Remaining wallet= " + (computer.playerWallet - computer.computerBetValue));
-        System.out.println();
+        System.out.println("Game finished player or computer out of money.");
+        System.out.println(player.name + " remaining wallet= " + (player.playerWallet));
+        System.out.println(computer.name + " remaining wallet= " + (computer.playerWallet));
 
-        if(player.hand.handValue > 21){
-            System.out.println("Player handValue over 21. Player busted!");
-            System.out.println(player.name + " handValue= " + player.hand.handValue);
-        }
-        if(computer.hand.handValue > 21){
-            System.out.println("Computer handValue over 21. Computer busted!");
-            System.out.println(computer.name + " handValue= " + computer.hand.handValue);
-        }
-
-        if(player.hand.handValue == 21 ){
-            System.out.println(player.name + " won the game!");
-        }else if(computer.hand.handValue == 21){
-            System.out.println(computer.name + " won the game!");
-        }else if(player.hand.handValue < 21 ){
-            System.out.println(player.name + " won the game and wins $" + player.potValue);
-        }
-        if(computer.hand.handValue < 21 ) {
-            System.out.println(computer.name + " won the game and wins $" + computer.potValue);
-        }
 
 
 

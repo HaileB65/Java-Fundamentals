@@ -23,7 +23,7 @@ public class Player {
             return false;
     }
 
-    public int playerPlaceBet(Player player){
+    public void playerPlaceBet(Player player){
         Scanner wantToPlaceBet = new Scanner(System.in); // starts a scanner to scan for players answer
         System.out.print("Place bet value: ");
         playerBetValue = wantToPlaceBet.nextInt(); // saves players answer value to int "playerBetValue"
@@ -32,25 +32,23 @@ public class Player {
         potValue = potValue + playerBetValue;
 
         System.out.print("Player placed a bet.");
-        System.out.print(" Current pot value: " + potValue + "\n");
-
-        return potValue;
+        System.out.print(" Current pot value= " + potValue + "\n");
     }
 
-    public void computerPlaceBet(Player computer, int potValue){
+    public void computerPlaceBet(Player computer){
         computerBetValue = playerBetValue;
 
         computer.playerWallet = computer.playerWallet - computerBetValue;
         potValue = potValue + computerBetValue;
 
         System.out.print("Computer placed bet.");
-        System.out.print(" Current pot value: " + potValue);
+        System.out.print(" Current pot value= " + potValue);
         System.out.println();
     }
 
     @Override
     public String toString() {
         return
-                 name + ", " + hand + ", player wallet= " +  playerWallet + ", potValue=" + potValue;
+                 name + ", " + hand + ", player wallet= " +  playerWallet;
     }
 }

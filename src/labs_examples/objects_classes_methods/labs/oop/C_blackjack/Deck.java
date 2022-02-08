@@ -23,7 +23,7 @@ public class Deck {
         int random;
 
         do{
-            random = (int) (Math.random() * (52)+1);
+            random = (int) (Math.random() * (51)+1);
 
         }while(usedCards.contains(random));
 
