@@ -42,7 +42,7 @@ public class SolarSystem implements ExploreInterface {
 
     public String isPlanetInGoldilocksZone() {
         if(planetInGoldilocksZone){
-            return "  has a plant(s) that reside in the Goldilocks Zone.";
+            return " has a plant(s) that reside in the Goldilocks Zone.";
         }else return " no planets that reside in the Goldilocks Zone.";
     }
 

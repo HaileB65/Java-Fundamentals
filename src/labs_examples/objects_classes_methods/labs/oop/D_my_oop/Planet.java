@@ -51,7 +51,7 @@ public class Planet extends SolarSystem implements ExploreInterface {
 
     @Override
     public String toString() {
-        return name + " has " + numbOfMoons + " moon(s), " + getHasAtmosphere() +  getHasLife();
+        return name + " has " + numbOfMoons + " moon(s)," + getHasAtmosphere() +  getHasLife();
     }
 
 }
