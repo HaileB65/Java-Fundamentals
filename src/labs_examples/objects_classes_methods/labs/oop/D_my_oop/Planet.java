@@ -1,6 +1,6 @@
 package labs_examples.objects_classes_methods.labs.oop.D_my_oop;
 
-public class Planet extends SolarSystem implements ExploreInterface {
+public class Planet extends SolarSystem implements ScanInterface {
     public int numbOfMoons;
     public boolean hasAtmosphere;
     boolean hasLife;
@@ -16,8 +16,7 @@ public class Planet extends SolarSystem implements ExploreInterface {
     @Override
     public void explore(){
         System.out.println("---------------");
-        System.out.println("Flying to " + name);
-        System.out.println("Landing on planet");
+        System.out.println("Landing on " + name);
         System.out.println("Taking sample");
         System.out.println("Surveying 2 mile radius around base");
         System.out.println("Lifting off back to orbit");
@@ -26,6 +25,7 @@ public class Planet extends SolarSystem implements ExploreInterface {
 
     public void scanObject(){
         System.out.println("---------------");
+        System.out.println("Flying to " + name);
         System.out.println("Scanning Planet");
     }
     public void scanForLife(){

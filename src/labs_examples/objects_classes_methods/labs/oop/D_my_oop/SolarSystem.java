@@ -1,6 +1,8 @@
 package labs_examples.objects_classes_methods.labs.oop.D_my_oop;
 
-public class SolarSystem implements ExploreInterface {
+import java.util.Scanner;
+
+public class SolarSystem implements ScanInterface {
     public String name;
     public int numbOfPlanets;
     public boolean planetInGoldilocksZone;
@@ -42,7 +44,7 @@ public class SolarSystem implements ExploreInterface {
 
     public String isPlanetInGoldilocksZone() {
         if(planetInGoldilocksZone){
-            return " has a plant(s) that reside in the Goldilocks Zone.";
+            return " has a plant that reside in the Goldilocks Zone.";
         }else return " no planets that reside in the Goldilocks Zone.";
     }
 
