@@ -2,53 +2,33 @@ package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
 
 import java.util.Scanner;
 
-public class Player {
+public class Player extends Human {
     String name;
-    Hand hand;
-    int potValue;
-    int playerWallet;
-    int playerBetValue;
-    int computerBetValue;
+    static int potValue;
+    int wallet;
+    int betValue;
 
-    public Player(String name, Hand hand, int playerWallet){
+    public Player(String name, int playerWallet){
         this.name = name;
-        this.hand = hand;
-        this.playerWallet = playerWallet;
+        this.wallet = playerWallet;
     }
 
-    public boolean computerAI(Player player1){
-        if(player1.hand.handValue < 16){
-            return true;
-        }else
-            return false;
-    }
-
-    public void playerPlaceBet(Player player){
+    public void placeBet(){
         Scanner wantToPlaceBet = new Scanner(System.in); // starts a scanner to scan for players answer
         System.out.print("Place bet value: ");
-        playerBetValue = wantToPlaceBet.nextInt(); // saves players answer value to int "playerBetValue"
+        betValue = wantToPlaceBet.nextInt(); // saves players answer value to int "playerBetValue"
 
-        player.playerWallet = player.playerWallet - playerBetValue;
-        potValue = potValue + playerBetValue;
+        wallet = wallet - betValue;
+        potValue += betValue;
 
         System.out.print("Player placed a bet.");
         System.out.print(" Current pot value= " + potValue + "\n");
     }
 
-    public void computerPlaceBet(Player computer){
-        computerBetValue = playerBetValue;
-
-        computer.playerWallet = computer.playerWallet - computerBetValue;
-        potValue = potValue + computerBetValue;
-
-        System.out.print("Computer placed bet.");
-        System.out.print(" Current pot value= " + potValue);
-        System.out.println();
-    }
 
     @Override
     public String toString() {
         return
-                 name + ", " + hand + ", player wallet= " +  playerWallet;
+                 name + ", " + hand + ", player wallet= " + wallet;
     }
 }

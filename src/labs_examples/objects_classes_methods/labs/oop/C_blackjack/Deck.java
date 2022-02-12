@@ -8,6 +8,10 @@ public class Deck {
 
     ArrayList<Integer> usedCards = new ArrayList<>();
 
+    public Deck(){
+        setDeck();
+    }
+
     public void setDeck(){
         int counter = 0;
         for(int i=0; i<=3; i++){
@@ -17,21 +21,6 @@ public class Deck {
             }
         }
 
-    }
-
-    public void deal(Player player1){
-        int random;
-
-        do{
-            random = (int) (Math.random() * (51)+1);
-
-        }while(usedCards.contains(random));
-
-        player1.hand.cards.add(cards[random]);
-
-        usedCards.add(random);
-
-        player1.hand.getScore(); // runs getScore() method to give handValue variable a number
     }
 
     public Card[] getCards(){
