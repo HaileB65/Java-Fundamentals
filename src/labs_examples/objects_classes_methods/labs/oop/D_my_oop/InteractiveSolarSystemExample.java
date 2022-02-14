@@ -1,70 +1,138 @@
 package labs_examples.objects_classes_methods.labs.oop.D_my_oop;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class InteractiveSolarSystemExample {
+    static SolarSystem milkyWay;
+    static SolarSystem proximaCentauri;
+    static Planet venus;
+    static Planet mercury;
+    static Planet earth;
+    static Planet mars;
+    static Planet jupiter;
+    static Planet saturn;
+    static Planet uranus;
+    static Planet neptune;
     public static void main(String[] args) {
         System.out.println("Starting SolarSystem Tour");
-        System.out.println();
         solarSystemTour();
-
-
 
     }
 
-    public static void solarSystemTour(){
+    public static void solarSystemTour() {
 
-        SolarSystem milkyWay = new SolarSystem("Milky Way", 8, true); // creating solar systems
-        SolarSystem proximaCentauri = new SolarSystem("Proxima Centauri", 2);           // and planet objects
-        Planet venus = new Planet("Venus",0, true , false);
-        Planet mercury = new Planet("Mercury",0, false , false);
-        Planet earth = new Planet("Earth",1, true , true);
-        Planet mars = new Planet("Mars",2, true , false);
-        Planet jupiter = new Planet("Jupiter",53, true , false);
-        Planet saturn = new Planet("Saturn",53, true , false);
-        Planet uranus = new Planet("Uranus",27, true , false);Planet neptune = new Planet("Neptune",14, true , false);
+        createSolarSystemsAndPlanets();
 
+        chooseASolarSystem();
 
-        System.out.println("Choose a solar system to explore");
-        System.out.println("Milky Way or Proxima Centauri");
+        chooseAPlanet();
 
-        Scanner solarSystem = new Scanner(System.in);
-        System.out.print("Enter solar system name: ");
-        String solarSystemToExplore = solarSystem.nextLine();
+        System.out.println("Return to solar System?");
 
-        if(solarSystemToExplore.equals("Milky Way")){
+    }
+
+    public static void createSolarSystemsAndPlanets(){
+        milkyWay = new SolarSystem("Milky Way", 8, true); // creating solar systems
+        proximaCentauri = new SolarSystem("Proxima Centauri", 2);           // and planet objects
+        venus = new Planet("Venus", 0, true, false);
+        mercury = new Planet("Mercury", 0, false, false);
+        earth = new Planet("Earth", 1, true, true);
+        mars = new Planet("Mars", 2, true, false);
+        jupiter = new Planet("Jupiter", 53, true, false);
+        saturn = new Planet("Saturn", 53, true, false);
+        uranus = new Planet("Uranus", 27, true, false);
+        neptune = new Planet("Neptune", 14, true, false);
+    }
+
+    public static void chooseASolarSystem(){
+        Scanner solarSystem;
+        String solarSystemToExplore;
+        do {
             System.out.println();
-            milkyWay.explore();
-            System.out.println(milkyWay);
-            System.out.println("Milky Way planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.");
+            System.out.println("Choose a solar system to explore");
+            System.out.println("Milky Way or Proxima Centauri");
 
-        }else if(solarSystemToExplore.equals("Proxima Centauri")){
-            System.out.println();
-            System.out.println(proximaCentauri);
-        }
+            solarSystem = new Scanner(System.in);
+            System.out.print("Enter solar system name: ");
+            solarSystemToExplore = solarSystem.nextLine();
 
+            if (solarSystemToExplore.equals("Milky Way")) {
+                milkyWay.explore();
+                System.out.println(milkyWay);
+                System.out.println("Milky Way planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.");
+                break;
+
+            } else if (solarSystemToExplore.equals("Proxima Centauri")) {
+                proximaCentauri.explore();
+                System.out.println(proximaCentauri);
+                System.out.println("Proxima Centauri planets: ");
+                break;
+            } else {
+                System.out.println("Solar system entered not found. Please try and enter the solar system name again.");
+            }
+        } while ((!solarSystemToExplore.equals("Milky Way") || !solarSystemToExplore.equals("Proxima Centauri")));
+    }
+
+    public static void chooseAPlanet(){
         System.out.println();
         System.out.println("Enter which planet you would like to explore");
         System.out.println("Milky Way planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.");
 
-        Scanner planet = new Scanner(System.in);
-        System.out.print("Enter planet name: ");
-        String planetToExplore = planet.nextLine();
-
-        if(planetToExplore.equals("Earth")){
-            earth.explore();
-            earth.scanObject();
-            earth.scanForLife();
-            earth.launchProbe(7);
-            System.out.println(earth);
-
-        }else if(planetToExplore.equals("Mars")){
+        Scanner flyTo;
+        String flyToPlanet;
+        do {
             System.out.println();
-            System.out.println(proximaCentauri);
-        }
+            flyTo = new Scanner(System.in);
+            System.out.print("Enter planet name: ");
+            flyToPlanet = flyTo.nextLine();
 
+            if (flyToPlanet.equals("Earth")) {
+                earth.scanObject();
+                earth.launchProbe(7);
+                earth.scanForLife();
+                System.out.println(earth);
+                askUserToExplorePlanet();
+                if (askUserToExplorePlanet() == true) {
+                    earth.explore();
+                } else if (askUserToExplorePlanet() == false) {
+                    System.out.println("User did not want ot explore planet.");
+                    break;
+                }
+
+            } else if (flyToPlanet.equals("Mars")) {
+                mars.scanObject();
+                mars.launchProbe(5);
+                mars.scanForLife();
+                System.out.println(mars);
+                askUserToExplorePlanet();
+                break;
+            }else {
+                System.out.println("Planet entered not found. Please try and enter the planet name again.");
+            }
+        }while((!flyToPlanet.equals("Earth")) || (!flyToPlanet.equals("Mars")));
+    }
+
+    public static boolean askUserToExplorePlanet(){
+        Scanner askToExplore;
+        String wantToExplorePlanet;
+
+        do {
+            System.out.println();
+            askToExplore = new Scanner(System.in);
+            System.out.print("Fly to planet?");
+            wantToExplorePlanet = askToExplore.nextLine();
+
+            if (wantToExplorePlanet.equals("Yes")) {
+                return true;
+            } else if (wantToExplorePlanet.equals("No")) {
+                return false;
+            }else {
+                System.out.println("Try again. Please enter yes or no.");
+            }
+        }while((!wantToExplorePlanet.equals("Yes")) || (!wantToExplorePlanet.equals("No")));
 
 
     }
+
+
 }

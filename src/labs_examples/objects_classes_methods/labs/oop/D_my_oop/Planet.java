@@ -29,11 +29,13 @@ public class Planet extends SolarSystem implements ScanInterface {
         System.out.println("Scanning Planet");
     }
     public void scanForLife(){
-        System.out.println("---------------");
-        System.out.println("Life found!");
+        if (hasLife == true){
+            System.out.println("Life found!");
+        }else {
+            System.out.println("No life found!");
+        }
     }
     public void launchProbe(int numbOfProbes){
-        System.out.println("---------------");
         System.out.println("Five probes returned safely");
     }
 
