@@ -113,24 +113,22 @@ public class InteractiveSolarSystemExample {
     }
 
     public static boolean askUserToExplorePlanet(){
-        Scanner askToExplore;
-        String wantToExplorePlanet;
+        Scanner askToExploreScanner = new Scanner(System.in);
+        String wantToExplorePlanet = "";
 
-        do {
+        while((!wantToExplorePlanet.equalsIgnoreCase("Yes")) && (!wantToExplorePlanet.equalsIgnoreCase("No"))){
             System.out.println();
-            askToExplore = new Scanner(System.in);
             System.out.print("Fly to planet?");
-            wantToExplorePlanet = askToExplore.nextLine();
+            System.out.println("Please enter yes or no.");
+            wantToExplorePlanet = askToExploreScanner.nextLine();
 
-            if (wantToExplorePlanet.equals("Yes")) {
-                return true;
-            } else if (wantToExplorePlanet.equals("No")) {
-                return false;
-            }else {
-                System.out.println("Try again. Please enter yes or no.");
-            }
-        }while((!wantToExplorePlanet.equals("Yes")) || (!wantToExplorePlanet.equals("No")));
+        }
 
+        if (wantToExplorePlanet.equalsIgnoreCase("Yes")) {
+            return true;
+        }else {
+            return false;
+        }
 
     }
 

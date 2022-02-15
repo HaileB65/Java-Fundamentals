@@ -101,13 +101,13 @@ public class BlackjackController {
 
         if (player.hand.handValue > 21) {
             System.out.println("Player handValue over 21. Player busted!");
-            player.potValue = 0;
+            printScores();
             return;
         }
         if (dealer.hand.handValue > 21) {
             System.out.println("Computer handValue over 21. Computer busted!");
             player.wallet += player.potValue * 2;
-            player.potValue = 0;
+            printScores();
             return;
         }
 
@@ -118,15 +118,19 @@ public class BlackjackController {
             System.out.println("Dealer won the game and wins $" + player.potValue);
         }
 
+        printScores();
+
+        player.hand = new Hand();
+        dealer.hand = new Hand();
+    }
+
+    public static void printScores(){
         player.potValue = 0;
 
         System.out.println("Round scores:");
         System.out.println(player.name + " handValue= " + player.hand.handValue + ", Remaining wallet= " + (player.wallet));
         System.out.println("Dealer handValue= " + dealer.hand.handValue);
         System.out.println();
-
-        player.hand = new Hand();
-        dealer.hand = new Hand();
     }
 
 }
