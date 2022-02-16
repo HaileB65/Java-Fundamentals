@@ -48,7 +48,7 @@ public class Planet extends SolarSystem implements ScanInterface {
     public String getHasLife(){
         if(hasLife){
             return " has life on planet.";
-        }else return " has shown no signs of life on planet";
+        }else return " shows no signs of life on planet";
     }
 
     @Override
