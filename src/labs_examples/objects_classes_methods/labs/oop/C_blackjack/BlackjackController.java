@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class BlackjackController {
     static Player player; // creating player and computer players
     static Dealer dealer = new Dealer();
+    static int numbOfGamesPlayed;
+    static int gamesPlayerWon;
+    static int gamesDealerWon;
 
     public static void main(String[] args) {
         System.out.println("Starting black jack game.");
@@ -27,14 +30,20 @@ public class BlackjackController {
             dealCards();
 
             printRoundResults();
+            numbOfGamesPlayed++;
             System.out.println();
             System.out.println("Next round");
+            System.out.println("Number of games played= " + numbOfGamesPlayed);
 
         }
 
         System.out.println();
         System.out.println("Game finished player or computer out of money.");
         System.out.println(player.name + " remaining wallet= " + (player.wallet));
+        System.out.println("Total number of games played= " + numbOfGamesPlayed);
+        System.out.println("Games won by player= " + gamesPlayerWon);
+        System.out.println("Games won by dealer= " + gamesDealerWon);
+
 
     }
 
@@ -112,10 +121,12 @@ public class BlackjackController {
         }
 
         if (player.hand.handValue > dealer.hand.handValue) {
+            gamesPlayerWon++;
             System.out.println(player.name + " won the game and wins $" + player.potValue);
             player.wallet += player.potValue * 2;
         }else {
             System.out.println("Dealer won the game and wins $" + player.potValue);
+            gamesDealerWon++;
         }
 
         printScores();
