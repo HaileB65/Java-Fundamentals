@@ -33,7 +33,7 @@ public class BlackjackController {
             numbOfGamesPlayed++;
             System.out.println();
             System.out.println("Next round");
-            System.out.println("Number of games played= " + numbOfGamesPlayed); 
+            System.out.println("Number of games played= " + numbOfGamesPlayed);
 
         }
 

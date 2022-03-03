@@ -9,8 +9,8 @@ public class DemonstratingPackageAccessControl {
         Gorilla sliverback = new Gorilla("Sliverback",true,true,450);
         Whale blueWhale = new Whale("Blue Whale",false,false,310000);
 
-        sliverback.buildNest(); // protected methods not accessible in a different package
-        blueWhale.dive();
+       //sliverback.buildNest(); // protected methods not accessible in a different package
+       // blueWhale.dive();
 
         sliverback.climbTree(); // public methods accessible in a different package
         blueWhale.breachForAir();
