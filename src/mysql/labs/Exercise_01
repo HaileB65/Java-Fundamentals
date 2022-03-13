@@ -6,7 +6,7 @@
  *
  *      1.) If you haven't already, create the college database as instructed here:
  *              https://platform.codingnomads.co/learn/mod/page/view.php?id=2133
- *      2.) Create a new table "students" with the following fields:
+ *      2.) Create a new table "basketballTeams" with the following fields:
  *          a. id (auto increment)
  *          b. first_name
  *          c. age
@@ -25,14 +25,14 @@
  *      5.) Create the appropriate foreign key constraints in the "teachers_students" table.
  *
  *      6.) Populate each table with at least 5 records. Use the "teachers_students" to associate various
- *          teachers with various students.
+ *          teachers with various basketballTeams.
  *
  *      7.) Write queries (and paste them below) for each of the following tasks:
- *          a. select all students
+ *          a. select all basketballTeams
  *          b. select all teacher who teach "Math" (choose a subject you included)
- *          c. use a join query to select all students with a certain teacher
- *          d. use a join query to select all students with taking a certain subject
- *          e. update a record in the student table
+ *          c. use a join query to select all basketballTeams with a certain teacher
+ *          d. use a join query to select all basketballTeams with taking a certain subject
+ *          e. update a record in the basketballTeam table
  *          f. add a record to the teacher table
  *
  *       8.) Export the schema to a dump file and copy it to this folder.
