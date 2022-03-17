@@ -38,6 +38,8 @@ class Example_06RunnableClass1 implements Runnable {
                 System.out.println(Thread.currentThread().getName() + " " + number);
                 number++;
                 lock.notifyAll();
+
+                // comment
             }
         }
     }
