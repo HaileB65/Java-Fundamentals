@@ -55,9 +55,9 @@ class SecondRunnableInterface implements Runnable{
 
 class RunnableInterfaceDriver{
     public static void main(String[] args) {
-        Example_05 runnable1 = new Example_05("thread1"); // thread initiated in constructor
+        FirstRunnableInterface runnable1 = new FirstRunnableInterface("thread1"); // thread initiated in constructor
 
-        Example_05Runnable2Class runnable2;
+        SecondRunnableInterface runnable2;
         new Thread(new Example_05Runnable2Class("thread2"), "Option 3").start(); // thread initiated here
 
         runnable1.thread.setPriority(Thread.MAX_PRIORITY); // exercise 3 change a thread's priority
