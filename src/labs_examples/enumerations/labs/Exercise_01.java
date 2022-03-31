@@ -1,6 +1,8 @@
 package labs_examples.enumerations.labs;
 
 
+import java.util.Random;
+
 /**
  * Enumerations Exercise 1:
  *
@@ -36,13 +38,23 @@ class EnumWeatherControllerClass{
         // 2) Create a parameterized enumeration that passes one or more values to its constructor. Demonstrate the use
         // of this enum from a separate class.
         System.out.println();
-        Weather houstonWeather = Weather.HOT;
-        if (houstonWeather.getTemperatureRange() == 4) {
-            System.out.println("It's hot outside");
-        }if (houstonWeather.getTemperatureRange() == 2) {
-            System.out.println("It's cold outside");
-        }if (houstonWeather.getTemperatureRange() == 3) {
-            System.out.println("It's warm outside");
+        Weather toronto = Weather.values()[new Random().nextInt(Weather.values().length)];
+        switch (toronto) {
+            case FREEZING:
+                System.out.println("It's FREEZING outside");
+                break;
+            case COLD:
+                System.out.println("It's COLD outside");
+                break;
+            case WARM:
+                System.out.println("It's WARM outside");
+                break;
+            case HOT:
+                System.out.println("It's HOT outside");
+                break;
+            case BLAZING:
+                System.out.println("It's BLAZING outside");
+                break;
         }
     }
 
