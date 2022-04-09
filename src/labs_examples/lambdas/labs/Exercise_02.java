@@ -1,5 +1,10 @@
 package labs_examples.lambdas.labs;
-import java.util.function.*;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.Consumer;
 
 /**
  * Lambdas Exercise 2:
@@ -9,52 +14,35 @@ import java.util.function.*;
  *
  */
 
-//@FunctionalInterface
-//interface Predicate<T> {
-//    public boolean test(T t);
-//}
-//
-//@FunctionalInterface
-//interface BinaryOperator<T> {
-//    public T apply(T x, T y);
-//}
-//
-//@FunctionalInterface
-// interface Function<T, R> {
-//    public R apply(T t);
-//}
-//
-//@FunctionalInterface
-//interface BiFunction<T, R> {
-//    public R apply(T t);
-//}
-//
-//@FunctionalInterface
-//interface Supplier<T, R> {
-//    public R apply(T t);
-//}
-//
-//@FunctionalInterface
-//interface IntConsumer<T, R> {
-//    public R apply(T t);
-//}
-//
-//@FunctionalInterface
-//interface IntFunction<T, R> {
-//    public R apply(T t);
-//}
-//
-//@FunctionalInterface
-//public interface DoubleToIntFunction{
-//    public R apply(T t);
-//}
-//
-//@FunctionalInterface
-//public interface ObjDoubleConsumer{
-//    public R apply(T t);
-//}
-//
-//@FunctionalInterface
-//public interface DoublePredicate{
-//    public R apply(T t);
-//}
+class Exercise_02{
+    public static void main(String[] args) {
+        Predicate<String> trueOrFalse = (p) -> {
+            if(p == p) {
+                return true;
+            }
+            return false;
+        };
+        System.out.println("Using Predicate interface:" + trueOrFalse.test("hello"));
+
+        BinaryOperator<Integer> xPlusYSqred = (x, y) -> x + (y*2);
+        System.out.println("Using BinaryOperator interface:" + xPlusYSqred.apply(5,25));
+
+        Function<Integer,Integer> xSqred = (x) -> x*x;
+        System.out.println("Using Function interface:" + xSqred.apply(12));
+
+        BiFunction<Integer,Integer,Boolean> isItEqualTo = (w, r) -> {
+            if(w == r) {
+                return true;
+            }
+            return false;
+        };
+        System.out.println("Using BiFunction interface:" + isItEqualTo.apply(12,88));
+
+        Supplier<Double> randomValue = () -> Math.random();
+        System.out.println("Using Supplier interface:" + randomValue.get());
+
+        Consumer<String> display = a -> System.out.println(a);
+        display.accept("Using Supplier interface: " + " Hello World!");
+
+    }
+}
