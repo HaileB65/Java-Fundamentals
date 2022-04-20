@@ -33,7 +33,7 @@ interface MyFunctionalInterface {  // 1) abstract method that takes no parameter
 
 @FunctionalInterface
 interface MyFunctionalInterface2 {  // 3) abstract method that takes 1 parameter and returns same data type
-    double calculate(Integer x);
+    Integer calculate(Integer x);
 }
 
 @FunctionalInterface
@@ -55,14 +55,14 @@ class FunctionInterfaceExercise {
         subtractNumbers.someMethod();
 
         MyFunctionalInterface2 divideByTwo = (x) ->  (x/2); // 4) lambda expression
-        MyFunctionalInterface2 divideByThree = new MyFunctionalInterface2() {  // 4) anonymous inner class
+        MyFunctionalInterface2 divideByFour = new MyFunctionalInterface2() {  // 4) anonymous inner class
             @Override
-            public double calculate(Integer x) {
+            public Integer calculate(Integer x) {
                 return x/4;
             }
         };
         System.out.println(divideByTwo.calculate(10));
-        System.out.println(divideByThree.calculate(99));
+        System.out.println(divideByFour.calculate(99));
 
         MyFunctionalInterface3 addTwoParameters = (x, y) -> x + y;  // 6) lambda expression
         MyFunctionalInterface3 divideTwoParameters = new MyFunctionalInterface3() {  // 6) anonymous inner class

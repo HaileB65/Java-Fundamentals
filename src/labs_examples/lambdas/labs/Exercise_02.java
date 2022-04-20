@@ -22,7 +22,7 @@ import java.util.function.IntUnaryOperator;
 class Exercise_02{
     public static void main(String[] args) {
         Predicate<String> trueOrFalse = (p) -> {
-            if(p == p) {
+            if(p == p) { // string value isn't being compared here. Something else is being compared here maybe String length?
                 return true;
             }
             return false;
@@ -56,12 +56,14 @@ class Exercise_02{
         convertDouble.accept(58.79);
 
         BiPredicate<String, String> compareStrings = (p,t) -> {
-            if(p == t) {
+            if(p == t) { // string value isn't being compared here. Something else is being compared here maybe String length?
                 return true;
             }
             return false;
         };
         System.out.println("#8 Using Predicate interface: " + compareStrings.test("hello", "hello"));
+        //System.out.println("#8 Using Predicate interface: " + compareStrings.test(new String("hello"), new String("hello")));
+        //
 
         IntConsumer display2 = q -> System.out.println(q);
         System.out.print("#9 Using IntConsumer interface: ");

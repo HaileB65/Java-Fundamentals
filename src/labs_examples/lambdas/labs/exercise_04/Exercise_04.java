@@ -54,12 +54,17 @@ class Exercise_04 {
         System.out.println("2) The sum is: " + sum);
         System.out.println();
 
-        List<Integer> list = Arrays.asList(3, 100, 9, 12, 15);  // 3)
-        Integer sum3 = list.stream()
-                .mapToInt(Integer::valueOf)
-                .sum();
-        System.out.println("3) =" + sum3);
+        System.out.println("3) changing values from a stream ");  // 3)
+        IntStream
+                .range(1, 16)
+                .map(i -> i +5)
+                .forEach(i -> System.out.print(i + " "));
         System.out.println();
+        System.out.println();
+//        Integer sum3 = list.stream()
+//                .map(i -> i + 5)
+//                .forEach(i -> System.out.print(i + " "));
+//        System.out.println("3) =" + sum3);
 
 
         IntStream intStream = IntStream.of(15, 13, 45, 18, 89, 70, 76, 56); // 4)
@@ -84,7 +89,9 @@ class Exercise_04 {
         String fileName = "src/labs_examples/lambdas/labs/exercise_04/line.txt"; // 6)
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             System.out.println("6) reading txt file and printing results:");
-            stream.forEach(System.out::println);
+
+            stream
+                    .forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,22 +100,39 @@ class Exercise_04 {
 
         String fileName2 = "src/labs_examples/lambdas/labs/exercise_04/stream_text_lab.csv"; // 7)
         try (Stream<String> stream = Files.lines(Paths.get(fileName2))) {
-            System.out.println("7) reading csv file and printing results:");
 
-            File file = new File(fileName2);
-            Scanner input = new Scanner(file);
-            List<String> list5 = new ArrayList<String>();
-            while (input.hasNextLine()) {
-                list5.add(input.nextLine());
-
-            }
-            System.out.println(list5); // wasn't able to figure out how to make each element an individual string
-
+            stream
+//                    .peek(s -> System.out.println("string: " + s))
+                    .map(s -> s.split(","))
+//                    .peek(arr -> System.out.println("arr : "+ Arrays.toString(arr)))
+                    .map(arr -> arr[1])
+//                    .peek(s -> System.out.println("string: " + s))
+                    .forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println("end of file");
         System.out.println();
+//        try (Stream<String> stream = Files.lines(Paths.get(fileName2))) {
+//            System.out.println("7) reading csv file and printing results:");
+//
+//            stream
+//                    .forEach(System.out::println);
+//            System.out.println();
+//            File file = new File(fileName2);
+//            Scanner input = new Scanner(file);
+//            List<String> list5 = new ArrayList<String>();
+//            while (input.hasNextLine()) {
+//                list5.add(input.nextLine());
+//
+//            }
+//            System.out.println(list5); // wasn't able to figure out how to make each element an individual string
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("end of file");
+//        System.out.println();
 
 
         try (Stream<String> stream = Files.lines(Paths.get(fileName2))) {  // 8)
@@ -136,13 +160,10 @@ class Exercise_04 {
         System.out.println("9) demonstrating use of anyMatch() function: " + answer);
         System.out.println();
 
-
-        List<String> vowels = Arrays.asList("a", "e", "i", "o", "u");  // 10)
-        StringBuilder result2 = vowels.stream().collect(StringBuilder::new, (x, y) -> x.append(y),  //  collect the list of strings to create a new string
-                (a, b) -> a.append(",").append(b));
-        System.out.println("10) Demonstrate the collect() function ");
-        System.out.println(result2.toString());
-
+        System.out.println("10) demonstrating use of allMatch() function: "); // 10)
+        List<Integer> list = Arrays.asList(3, 4, 6, 12, 20);
+        boolean answer2 = list.stream().allMatch(n-> n % 3 ==0);
+        System.out.println(answer2);
 
     }
 

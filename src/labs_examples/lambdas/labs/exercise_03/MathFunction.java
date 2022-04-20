@@ -1,17 +1,12 @@
 package labs_examples.lambdas.labs.exercise_03;
 
-class MathFunctions{
-
-    public static int xPlusYSquared(int x, int y){
-        return x * + (y*y);
-    }
-
-    public static int ySqred(int x){
-        return x*x;
-    }
+class MathFunctions implements Comparable<Integer>{
 
     @Override
-    public String toString() {
-        return "MathFunctions{}";
+    public int compareTo(Integer o) {
+//        if (x < y) return -1;  // couldn't figure out how to get comparable function to work correctly
+//        if (y > x) return 1;
+        return 0;
     }
 }
+
