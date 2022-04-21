@@ -69,7 +69,7 @@ class Exercise_04 {
 
         IntStream intStream = IntStream.of(15, 13, 45, 18, 89, 70, 76, 56); // 4)
         OptionalDouble res = intStream
-                .filter(num -> num > 10)
+                .filter(num -> num > 68)
                 .average();
         System.out.print("4) Average of the elements of the stream is ");
         if (res.isPresent()) {
@@ -100,6 +100,7 @@ class Exercise_04 {
 
         String fileName2 = "src/labs_examples/lambdas/labs/exercise_04/stream_text_lab.csv"; // 7)
         try (Stream<String> stream = Files.lines(Paths.get(fileName2))) {
+            System.out.println("7) ");
 
             stream
 //                    .peek(s -> System.out.println("string: " + s))
