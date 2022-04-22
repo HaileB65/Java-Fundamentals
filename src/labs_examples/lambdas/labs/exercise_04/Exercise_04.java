@@ -114,39 +114,23 @@ class Exercise_04 {
         }
         System.out.println("end of file");
         System.out.println();
-//        try (Stream<String> stream = Files.lines(Paths.get(fileName2))) {
-//            System.out.println("7) reading csv file and printing results:");
-//
-//            stream
-//                    .forEach(System.out::println);
-//            System.out.println();
-//            File file = new File(fileName2);
-//            Scanner input = new Scanner(file);
-//            List<String> list5 = new ArrayList<String>();
-//            while (input.hasNextLine()) {
-//                list5.add(input.nextLine());
-//
-//            }
-//            System.out.println(list5); // wasn't able to figure out how to make each element an individual string
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("end of file");
-//        System.out.println();
 
 
-        try (Stream<String> stream = Files.lines(Paths.get(fileName2))) {  // 8)
-            System.out.println("8) reading txt file and printing results:");
+        try (Stream<String> stream2 = Files.lines(Paths.get(fileName2))) {  // 8)
+            System.out.println("8) Split the lines into String arrays and the print out the sum of all elements at index 2.:");
 
-            File file = new File(fileName2);
-            Scanner input = new Scanner(file);
-            List<String> list5 = new ArrayList<String>();
-            while (input.hasNextLine()) {
-                list5.add(input.nextLine());
+            Double sum2 = stream2
 
-            }
-            System.out.println(list5); // wasn't able to figure out how to make each element an individual string
+                    .map(s -> s.split(","))
+
+                    .map(arr -> arr[2])
+
+                    .mapToDouble(x -> {
+                        return Double.valueOf(x);
+                    })
+                    .sum();
+                    System.out.println("Total : " + sum2 );
+
 
         } catch (IOException e) {
             e.printStackTrace();
