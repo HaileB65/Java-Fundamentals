@@ -29,11 +29,24 @@
  *
  *      7.) Write queries (and paste them below) for each of the following tasks:
  *          a. select all basketballTeams
+                SELECT * FROM university.basketballteams;
  *          b. select all teacher who teach "Math" (choose a subject you included)
+                SELECT * FROM university.teacher WHERE subject = "Math";
  *          c. use a join query to select all basketballTeams with a certain teacher
+                SELECT university.teachers_students.teacher_id, university.teachers_students.basetballteam_id
+                FROM university.teachers_students
+                INNER JOIN university.teachers ON university.teachers_students.teacher_id=university.teachers.teacher_id;
  *          d. use a join query to select all basketballTeams with taking a certain subject
+                SELECT university.teachers.subject, university.basketballteams.basetballteam_id
+                FROM university.teachers_students
+                INNER JOIN university.teachers ON university.teachers_students.teacher_id=university.teachers.teacher_id;
  *          e. update a record in the basketballTeam table
+                UPDATE university.basetballteams
+                SET name = 'The Heat', age= '58'
+                WHERE id = 1;
  *          f. add a record to the teacher table
+                INSERT INTO teachers
+                VALUES ('Ally', Watson);
  *
  *       8.) Export the schema to a dump file and copy it to this folder.
  *
