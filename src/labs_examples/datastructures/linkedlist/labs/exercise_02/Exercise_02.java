@@ -16,10 +16,10 @@ class Exercise_02 {
     public static void main(String[] args) {
     CustomLinkedList firstLinkedList = new CustomLinkedList();
 
-        firstLinkedList.add("Me");
-        firstLinkedList.add("You");
-        firstLinkedList.add("Us");
-        firstLinkedList.add("Them");
+        firstLinkedList.addToFrontOfList("Me");
+        firstLinkedList.addToFrontOfList("You");
+        firstLinkedList.addToEndOfList("Us");
+        firstLinkedList.addToEndOfList("Them");
 
         System.out.println(firstLinkedList.get(2));
         System.out.println(firstLinkedList);
