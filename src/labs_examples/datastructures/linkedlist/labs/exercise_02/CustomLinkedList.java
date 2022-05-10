@@ -4,20 +4,17 @@ package labs_examples.datastructures.linkedlist.labs.exercise_02;
 public class CustomLinkedList<T> {
 
     class Node<T> {
-        // a generic variable to hold the data we want to store in the list
          T data;
-        // a "link" to the "next" Node in the LinkedList
          Node next;
 
 
-        // a simple constructor that takes in data
+
         public Node(T data) {
             this.data = data;
             this.next = null;
         }
 
 
-        // an overloaded constructor we'll use to add Nodes to the front of the LinkedList
         public Node(T data, Node node) {
             this.data = data;
             this.next = node;
@@ -49,13 +46,11 @@ public class CustomLinkedList<T> {
 
         Node previous = null; // track previous node
 
-            // so we need to iterate all the way through list to find last node
-            // we'll know we've hit the last node when "iterator.next" is equal to null
+
             while (iterator.next != null) {
                 iterator = iterator.next;
             }
-            // once we exit the loop above, iterator will be referencing the final node in the list
-            // at this point we can attach the new Node to the "next" variable of the final node in th list
+
             iterator.next = new Node(newData);
     }
 
@@ -84,16 +79,15 @@ public class CustomLinkedList<T> {
 
     public T get(int index) {
         try {
-            // simple variable to use for looping over the list
+
             int count = 0;
 
 
-            // creating a new variable that initially references the "head" node
-            // we'll use this new variable to traverse across the list
+
             Node iterator = head;
 
 
-            // iterate until index is reach
+
             while (count != index) {
                 iterator = iterator.next;
                 count++;

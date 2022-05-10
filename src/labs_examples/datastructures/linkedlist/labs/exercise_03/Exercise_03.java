@@ -10,15 +10,16 @@ import labs_examples.datastructures.linkedlist.labs.exercise_02.CustomLinkedList
 
 class Exercise_03 {
     public static void main(String[] args) {
-        CustomDoubleLinkedList doubleLinkedList = new CustomDoubleLinkedList();
+            CustomDoubleLinkedList obj = new CustomDoubleLinkedList();
 
-        doubleLinkedList.addToFrontOfList("Me");
-        doubleLinkedList.addToFrontOfList("You");
-        doubleLinkedList.addToEndOfList("Us");
-        doubleLinkedList.addToEndOfList("Them");
 
-        System.out.println(doubleLinkedList.get(2));
-        doubleLinkedList.printOutList(doubleLinkedList);
+            obj.addNewNode("New York");
+            obj.addNewNode("Los Angeles");
+            obj.addNewNode("Chicago");
+            obj.addNewNode("Houston");
+            obj.addNewNode("Houston");
+
+            obj.showData();
 
     }
 }

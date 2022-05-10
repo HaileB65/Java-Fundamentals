@@ -3,161 +3,55 @@ package labs_examples.datastructures.linkedlist.labs.exercise_03;
 
 public class CustomDoubleLinkedList<T> {
 
-    class Node<T> {
-        // a generic variable to hold the data we want to store in the list
-        T data;
-        // a "link" to the "next" Node in the LinkedList
+    class Node {
+        String data;
         Node prev;
         Node next;
 
-
-        // a simple constructor that takes in data
-        public Node(T data) {
+        public Node(String data) {
             this.data = data;
-            this.prev = null;
-            this.next = null;
-        }
-
-
-        // an overloaded constructor we'll use to add Nodes to the front of the LinkedList
-        public Node(T data, Node node) {
-            this.data = data;
-            this.next = node;
         }
     }
 
     Node head = null;
     Node tail = null;
 
+    public void addNewNode(String data) {
 
-    @SafeVarargs
-    public CustomDoubleLinkedList(T... data) {
-        head = null;
-    }
+        Node newNode = new Node(data);
 
-    public void printOutList(CustomDoubleLinkedList list){
-        for(int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
-    }
+        if (head == null) {
 
-    public void addToFrontOfList(T newData){
-        Node newNode = new Node(newData); // pushes new data to front of  the list
-        if(head == null) {
-            //The newNode is pointed by both head or tail
             head = newNode;
             tail = newNode;
-            //It is first node so prev will point to null
             head.prev = null;
-            //It is also last node so tail's next will point to null
             tail.next = null;
         }
 
-        newNode.next = head;
-        head = newNode;
-    }
+        else {
 
-    public void addToEndOfList(T newData){
-        Node iterator = head; // reference to head node
-
-        Node previous = null; // track previous node
-
-        // so we need to iterate all the way through list to find last node
-        // we'll know we've hit the last node when "iterator.next" is equal to null
-        while (iterator.next != null) {
-            iterator = iterator.next;
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+            tail.next = null;
         }
-        // once we exit the loop above, iterator will be referencing the final node in the list
-        // at this point we can attach the new Node to the "next" variable of the final node in th list
-        iterator.next = new Node(newData);
     }
+    public void showData() {
 
-    public void remove(T data) {
-        Node temp = head; // reference to head node
+        Node current = head;
 
-        Node prev = null; // reference to previous node
+        if (head == null) {
 
-        if (temp != null && temp.data == data) {  // change the head node if headNode holds the key value
-            head = temp.next;
+            System.out.println("List is empty");
             return;
         }
 
-        while (temp != null && temp.data != data) { // find node with key value
-            prev = temp;
-            temp = temp.next;
+        System.out.println("Nodes of doubly linked list: ");
+
+        while (current != null) {
+            System.out.print(current.data + "\n");
+            current = current.next;
         }
-
-        if (temp == null) { // if key was not present in list
-            return;
-        }
-
-        prev.next = temp.next;
-
-    }
-
-    public T get(int index) {
-        try {
-            // simple variable to use for looping over the list
-            int count = 0;
-
-
-            // creating a new variable that initially references the "head" node
-            // we'll use this new variable to traverse across the list
-            Node iterator = head;
-
-
-            // iterate until index is reach
-            while (count != index) {
-                iterator = iterator.next;
-                count++;
-            }
-            return (T) iterator.data;
-
-
-        } catch (NullPointerException ex) {
-            return null; // list is empty
-        }
-    }
-
-    public void set(int index, T data) {
-        try {
-            int count = 0;
-            Node iterator = head;
-
-
-            // iterate through list
-            while (count != index) {
-                iterator = iterator.next;
-                count++;
-            }
-
-
-            // change data
-            iterator.data = data;
-
-
-        } catch (NullPointerException ex) {
-            System.out.println("invalid index");
-        }
-    }
-
-    public int size() {
-        int count = 0;
-        Node iterator = head;
-
-
-        // iterate through list
-        while (iterator != null) {
-            count++;
-            iterator = iterator.next;
-        }
-
-
-        return count;
-    }
-
-    public boolean isEmpty() {
-        return head == null;
     }
 }
 
