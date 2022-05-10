@@ -1,18 +1,20 @@
-package labs_examples.datastructures.linkedlist.labs.exercise_02;
+package labs_examples.datastructures.linkedlist.labs.exercise_03;
 
 
-public class CustomLinkedList<T> {
+public class CustomDoubleLinkedList<T> {
 
     class Node<T> {
         // a generic variable to hold the data we want to store in the list
-         T data;
+        T data;
         // a "link" to the "next" Node in the LinkedList
-         Node next;
+        Node prev;
+        Node next;
 
 
         // a simple constructor that takes in data
         public Node(T data) {
             this.data = data;
+            this.prev = null;
             this.next = null;
         }
 
@@ -24,24 +26,35 @@ public class CustomLinkedList<T> {
         }
     }
 
-    private Node head;
+    Node head = null;
+    Node tail = null;
 
 
     @SafeVarargs
-    public CustomLinkedList(T... data) {
-            head = null;
+    public CustomDoubleLinkedList(T... data) {
+        head = null;
     }
 
-    public void printOutList(CustomLinkedList<T> list){
+    public void printOutList(CustomDoubleLinkedList list){
         for(int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
     }
 
     public void addToFrontOfList(T newData){
-        Node new_node = new Node(newData); // pushes new data to front of  the list
-        new_node.next = head;
-        head = new_node;
+        Node newNode = new Node(newData); // pushes new data to front of  the list
+        if(head == null) {
+            //The newNode is pointed by both head or tail
+            head = newNode;
+            tail = newNode;
+            //It is first node so prev will point to null
+            head.prev = null;
+            //It is also last node so tail's next will point to null
+            tail.next = null;
+        }
+
+        newNode.next = head;
+        head = newNode;
     }
 
     public void addToEndOfList(T newData){
@@ -49,14 +62,14 @@ public class CustomLinkedList<T> {
 
         Node previous = null; // track previous node
 
-            // so we need to iterate all the way through list to find last node
-            // we'll know we've hit the last node when "iterator.next" is equal to null
-            while (iterator.next != null) {
-                iterator = iterator.next;
-            }
-            // once we exit the loop above, iterator will be referencing the final node in the list
-            // at this point we can attach the new Node to the "next" variable of the final node in th list
-            iterator.next = new Node(newData);
+        // so we need to iterate all the way through list to find last node
+        // we'll know we've hit the last node when "iterator.next" is equal to null
+        while (iterator.next != null) {
+            iterator = iterator.next;
+        }
+        // once we exit the loop above, iterator will be referencing the final node in the list
+        // at this point we can attach the new Node to the "next" variable of the final node in th list
+        iterator.next = new Node(newData);
     }
 
     public void remove(T data) {
@@ -80,7 +93,7 @@ public class CustomLinkedList<T> {
 
         prev.next = temp.next;
 
-        }
+    }
 
     public T get(int index) {
         try {
@@ -147,3 +160,4 @@ public class CustomLinkedList<T> {
         return head == null;
     }
 }
+

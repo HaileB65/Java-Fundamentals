@@ -22,7 +22,7 @@ class Exercise_02 {
         firstLinkedList.addToEndOfList("Them");
 
         System.out.println(firstLinkedList.get(2));
-        System.out.println(firstLinkedList);
+        firstLinkedList.printOutList(firstLinkedList);
 
     }
 }
