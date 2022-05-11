@@ -1,4 +1,4 @@
-package labs_examples.datastructures.stack.labs;
+package labs_examples.datastructures.stack.labs.exercise_02;
 
 /**
  *      Stacks - Exercise_02
@@ -18,3 +18,7 @@ package labs_examples.datastructures.stack.labs;
  *      TIP: To initialize an new array of a Generic type you can use this:
  *           T[] data = (T[]) new Object[10];
  */
+
+public class Exercise_02{
+
+}
