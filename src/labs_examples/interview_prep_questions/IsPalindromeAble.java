@@ -1,12 +1,47 @@
 package labs_examples.interview_prep_questions;
 
+import java.util.Arrays;
+
 public class IsPalindromeAble {
     private static boolean isPalindromeAble(String str) {
 
-        // Implement your solution here
+        if (str.length() == 0){
+            System.out.print("String is empty  ");
+        }
+        if (str.length() == 1){
+            System.out.print("There is only one letter in string  ");
+        }
 
-        // Don't forget to remove the Exception
-        throw new RuntimeException("Not implemented");
+        // Implement your solution here
+        // Converting input string to character array
+        char tempArray[] = str.toCharArray();
+
+        // Sorting temp array using
+        Arrays.sort(tempArray);
+
+        //  new sorted string
+//        String str2 = new String(tempArray);
+
+//        System.out.println(str2);
+
+//        if(all letter as double){
+//            // is palindromeable
+//        }
+
+        for (int i = 0; i < tempArray.length; i+=2) {
+            if (tempArray[i] == tempArray[i + 1]) {
+//                tempArray[0] == tempArray[1];
+//                tempArray[2] == tempArray[3];
+//                tempArray[4] == tempArray[5];
+                continue;
+            } else{
+                return false;
+            }
+        }
+//        if(not all letters have a double){
+//            // not palindromeable
+//        }
+        return true;
     }
 
     public static void main(String[] args) {
