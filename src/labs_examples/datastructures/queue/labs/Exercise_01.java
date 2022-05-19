@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
  *      2) demonstrate the use of EVERY method in the Queue class - there are 7
  */
 
-class exercise_03{
+class exercise_01{
     public static void main(String[] args) {
         PriorityQueue queue = new PriorityQueue();
 

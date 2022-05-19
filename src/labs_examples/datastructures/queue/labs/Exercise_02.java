@@ -45,10 +45,6 @@ public class Exercise_02 {
         }
 
 
-        /**
-         * Adds an item to the Queue
-         * @param item to be added
-         */
         public void enqueue(V item) {
             // insert item into front of list
             list.add(item);
@@ -56,10 +52,6 @@ public class Exercise_02 {
         }
 
 
-        /**
-         * Removes an item from the Queue
-         * @return the removed item
-         */
         public V dequeue() {
             try {
                 // get item from the front of the Queue
