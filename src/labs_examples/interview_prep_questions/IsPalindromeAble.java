@@ -7,9 +7,11 @@ public class IsPalindromeAble {
 
         if (str.length() == 0){
             System.out.print("String is empty  ");
+            return true;
         }
         if (str.length() == 1){
             System.out.print("There is only one letter in string  ");
+            return true;
         }
 
         // Implement your solution here
@@ -22,25 +24,25 @@ public class IsPalindromeAble {
         //  new sorted string
 //        String str2 = new String(tempArray);
 
-//        System.out.println(str2);
+        int size = tempArray.length;
+        boolean allowed = false;
 
-//        if(all letter as double){
-//            // is palindromeable
-//        }
+        if(size % 2 != 0){
+            size = tempArray.length-1;
+            allowed = true;
+        }
+        // array not even
+        // if array is even
 
-        for (int i = 0; i < tempArray.length; i+=2) {
-            if (tempArray[i] == tempArray[i + 1]) {
-//                tempArray[0] == tempArray[1];
-//                tempArray[2] == tempArray[3];
-//                tempArray[4] == tempArray[5];
-                continue;
-            } else{
-                return false;
+        for (int i = 0; i < size; i+=2) {
+            if (tempArray[i] != tempArray[i + 1]) {
+                if(allowed){
+                    allowed = false;
+                } else {
+                    return false;
+                }
             }
         }
-//        if(not all letters have a double){
-//            // not palindromeable
-//        }
         return true;
     }
 
@@ -75,7 +77,8 @@ public class IsPalindromeAble {
                 System.out.println(" - fail");
             }
         } catch (Exception e) {
-            System.out.printf("Test: '%s' expected: %s actual: %s - fail with exception\n", str, expected, e.getLocalizedMessage());
+            System.out.printf("Test: '%s' expected: %s actual: %s - fail with exception\n", str, expected, e);
+            // .getLocalizedMessage()
         }
     }
 }
