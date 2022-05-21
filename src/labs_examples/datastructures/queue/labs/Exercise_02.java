@@ -1,7 +1,5 @@
 package labs_examples.datastructures.queue.labs;
 
-import labs_examples.datastructures.linkedlist.examples.CustomLinkedList;
-
 /**
  *      Queues - Exercise_02
  *
@@ -21,63 +19,109 @@ import labs_examples.datastructures.linkedlist.examples.CustomLinkedList;
 
 public class Exercise_02 {
     public static void main(String[] args) {
-        CustomQueue queue = new CustomQueue<>();
+        GenericQueueClass queue = new GenericQueueClass<>();
 
-        queue.enqueue(125);
-        queue.enqueue(358);
-        queue.enqueue(786);
+        queue.push("hello");
+        queue.push("HI");
+        queue.push("Hey!");
+        System.out.println("array size = " + queue.arraySize());
+        System.out.println();
+        queue.printOutStack();
+        System.out.println();
+
+        System.out.println("value at top of queue: " + queue.peekFirst());
+        System.out.println("value at top of queue: " + queue.peekLast());
     }
 
-     static class CustomQueue<V> {
+    static class GenericQueueClass<E> {
+        E[] element;
+        int index = 0;
+        int arrayLength = 10;
+        E temp;
 
 
-        // create a LinkedList for us to use as the underlying data structure
-        private CustomLinkedList<V> list = new CustomLinkedList<>();
+        public GenericQueueClass() {
+            element = (E[]) new Object[arrayLength];
 
-
-        // simple boolean to track whether or not the queue is empty
-        private boolean isEmpty;
-
-
-        // constructor - set empty to true upon creation
-        public CustomQueue() {
-            isEmpty = true;
         }
 
+        public void push(E newData) {
 
-        public void enqueue(V item) {
-            // insert item into front of list
-            list.add(item);
-            isEmpty = false;
+            element[(element.length-1)- (element.length-1)] = newData; // places elements into array in reverse
+            index--;
+
+//            data[index] = newData;  // places elements into array in order
+//            index++;
+
         }
 
-
-        public V dequeue() {
+        public E pop(E[] list) throws CustomException {
             try {
-                // get item from the front of the Queue
-                V item = list.get(0);
 
-
-                // remove that item from the front of the Queue            list.remove(0);
-
-
-
-                // check if empty
-                if (list.get(0) == null) {
-                    isEmpty = true;
+                if(list.length < 0){
+                    throw new CustomException("current Queue is empty");
                 }
+                E item = element[0];
+                E[] copy = (E[]) new Object[element.length-1];
 
-
-                // return first item that we got just above
+                for (int i = 0, j = 0; i < element.length; i++) {
+                    if (i != 0) {
+                        copy[j++] = (E) element[i];
+                    }
+                }
                 return item;
-            } catch (NullPointerException ex) {
+
+            } catch (CustomException ex) {
+                System.out.println("Exception: list is empty" + ex);
                 return null;
             }
         }
 
-
-        public boolean isEmpty() {
-            return isEmpty;
+        public int empty() {
+            return element.length;
         }
+
+        public void printOutStack(){
+            for(int i = 0; i < element.length; i++){
+                System.out.println(element[i]);
+            }
+        }
+
+
+        public void resizeArray(){
+            if (element.length < (arrayLength / .75) ){
+                element = (E[]) new Object[arrayLength*2];
+            }
+            if (element.length < (arrayLength / .25) ){
+                element = (E[]) new Object[arrayLength/2];
+            }
+        }
+
+        public E peekFirst(){
+            return element[0];
+
+        }
+
+        public E peekLast(){
+            return element[element.length-1];
+        }
+
+        static class CustomException extends Exception{
+
+            public CustomException(String custom_exception) {
+
+            }
+
+            @Override
+            public String toString(){
+                return "Custom Exception";
+            }
+        }
+
+        public int arraySize(){
+            return element.length;
+        }
+
+
     }
 }

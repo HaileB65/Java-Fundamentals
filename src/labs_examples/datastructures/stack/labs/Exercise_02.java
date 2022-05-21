@@ -22,12 +22,13 @@ package labs_examples.datastructures.stack.labs;
 public class Exercise_02{
 
     public static void main(String[] args) {
-        GenericStackClass stack = new GenericStackClass();
+        GenericQueueClass stack = new GenericQueueClass();
 
         stack.push(10);
         stack.push(20);
         stack.push(30);
-        System.out.println(stack.arraySize());
+        System.out.println("array size = " + stack.arraySize());
+        System.out.println();
         stack.printOutStack();
         System.out.println();
 
@@ -38,21 +39,21 @@ public class Exercise_02{
 
     }
 
-    static class GenericStackClass<E> {
+    static class GenericQueueClass<E> {
         E[] data;
         int index = 0;
         int arrayLength = 10;
         E temp;
 
 
-        public GenericStackClass() {
+        public GenericQueueClass() {
             data = (E[]) new Object[arrayLength];
 
         }
 
         public void push(E newData) {
 
-            data[(data.length-1)+index] = newData; // places elements into array in reverse
+            data[(data.length-1)- (data.length-1)] = newData; // places elements into array in reverse
             index--;
 
 //            data[index] = newData;  // places elements into array in order
