@@ -1,4 +1,4 @@
-package labs_examples.interview_prep_questions;
+package interview_prep_questions;
 
 public class IsPalindrome {
     private static boolean isPalindrome(String str) {
