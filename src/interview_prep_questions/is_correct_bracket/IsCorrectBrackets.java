@@ -1,13 +1,44 @@
 package interview_prep_questions.is_correct_bracket;
 
+import java.util.Arrays;
+
 public class IsCorrectBrackets {
 
     private static boolean isCorrectBrackets(String str) {
 
-        // Implement your solution here
 
-        // Don't forget to remove the Exception
-        throw new RuntimeException("Not implemented");
+        if (str.length() == 0){
+            return true;
+        }
+        if (str == "null"){
+            return false;
+        }
+        if (str.length() == 1){
+            return false;
+        }
+        if (str.length() % 2 != 0){
+            return false;
+        }
+
+
+        String[] items = {"{","}","[","]","(",")"}; // check if array contains any brackets
+        for (String item : items) {
+            if (!str.contains(item)) {
+                return false;
+            }
+        }
+
+        // Converting input string to character array
+        char tempArray[] = str.toCharArray();
+
+
+        for (int i = 0; i < tempArray.length; i++) {
+            if (tempArray[i] != tempArray[str.length()-1-i]) {
+                return false;
+            }
+        }
+        return true;
+
     }
 
     public static void main(String[] args) {

@@ -14,7 +14,6 @@ public class IsPalindromeAble {
             return true;
         }
 
-        // Implement your solution here
         // Converting input string to character array
         char tempArray[] = str.toCharArray();
 
